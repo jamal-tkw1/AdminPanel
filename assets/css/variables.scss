@@ -1,5 +1,5 @@
 // Theme Variables
-:root {
+[data-bs-theme="light"] {
   --primary-color: #4a69ff;
   --primary-rgb: 74, 105, 255;
   --secondary-color: #6c757d;
@@ -23,12 +23,106 @@
   --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
   --glass-blur: 10px;
 }
-body.dark-mode {
+
+[data-bs-theme="dark"] {
+  --primary-color: #4a69ff;
+  --primary-rgb: 74, 105, 255;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
   --body-bg: #0f172a;
   --text-color: #9ca3af;
   --heading-color: #e2e8f0;
   --border-color: #334155;
   --card-bg: rgba(30, 41, 59, 0.6);
   --sidebar-bg: #1e293b;
+  --sidebar-text-color: #9ca3af;
+  --sidebar-active-text: #ffffff;
   --topbar-bg: rgba(30, 41, 59, 0.4);
+  --body-font: 'Poppins', sans-serif;
+  --sidebar-width: 270px;
+  --topbar-height: 70px;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  --glass-blur: 10px;
+}
+
+// Purple Theme
+[data-bs-theme="purple"] {
+  --primary-color: #a259ff;
+  --primary-rgb: 162, 89, 255;
+  --secondary-color: #6c757d;
+  --success-color: #7c3aed;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --body-bg: #f6f0ff;
+  --text-color: #4b3869;
+  --heading-color: #6d28d9;
+  --border-color: #e0d7f7;
+  --card-bg: rgba(162, 89, 255, 0.08);
+  --sidebar-bg: #6d28d9;
+  --sidebar-text-color: #e0d7f7;
+  --sidebar-active-text: #ffffff;
+  --topbar-bg: rgba(162, 89, 255, 0.12);
+  --body-font: 'Poppins', sans-serif;
+  --sidebar-width: 270px;
+  --topbar-height: 70px;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 10px 30px rgba(162, 89, 255, 0.07);
+  --glass-blur: 10px;
+}
+
+// Blue Theme
+[data-bs-theme="blue"] {
+  --primary-color: #2196f3;
+  --primary-rgb: 33, 150, 243;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --body-bg: #e3f2fd;
+  --text-color: #0d47a1;
+  --heading-color: #1565c0;
+  --border-color: #bbdefb;
+  --card-bg: rgba(33, 150, 243, 0.08);
+  --sidebar-bg: #1565c0;
+  --sidebar-text-color: #bbdefb;
+  --sidebar-active-text: #ffffff;
+  --topbar-bg: rgba(33, 150, 243, 0.12);
+  --body-font: 'Poppins', sans-serif;
+  --sidebar-width: 270px;
+  --topbar-height: 70px;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 10px 30px rgba(33, 150, 243, 0.07);
+  --glass-blur: 10px;
+}
+
+// Green Theme
+[data-bs-theme="green"] {
+  --primary-color: #43a047;
+  --primary-rgb: 67, 160, 71;
+  --secondary-color: #6c757d;
+  --success-color: #388e3c;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --body-bg: #e8f5e9;
+  --text-color: #1b5e20;
+  --heading-color: #388e3c;
+  --border-color: #c8e6c9;
+  --card-bg: rgba(67, 160, 71, 0.08);
+  --sidebar-bg: #388e3c;
+  --sidebar-text-color: #c8e6c9;
+  --sidebar-active-text: #ffffff;
+  --topbar-bg: rgba(67, 160, 71, 0.12);
+  --body-font: 'Poppins', sans-serif;
+  --sidebar-width: 270px;
+  --topbar-height: 70px;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 10px 30px rgba(67, 160, 71, 0.07);
+  --glass-blur: 10px;
 }
