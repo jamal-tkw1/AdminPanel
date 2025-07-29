@@ -145,6 +145,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
+#breadcrumbNav {
+  padding-left: 45px !important;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -180,8 +184,101 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s;
 }
 
+#content.sidebar-compact {
+  padding-left: 60px;
+}
+
 #content.full-width {
   padding-left: 0;
+}
+
+/* By default, compact mode is enabled up to medium devices */
+@media (max-width: 991.98px) {
+  #sidebar.compact {
+    width: 60px;
+    min-width: 60px;
+  }
+  #sidebar.compact:hover {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+  }
+}
+@media (min-width: 992px) {
+  #sidebar.compact {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+  }
+  #sidebar.compact .sidebar-header h3,
+  #sidebar.compact .sidebar-header span,
+  #sidebar.compact .sidebar-menu .menu-header,
+  #sidebar.compact .sidebar-menu li .menu-text,
+  #sidebar.compact .sidebar-footer,
+  #sidebar.compact .sidebar-user-info {
+    display: block !important;
+  }
+  #sidebar.compact .sidebar-header {
+    padding: 1.25rem;
+  }
+  #sidebar.compact .sidebar-menu li a {
+    padding: 0.8rem 1.5rem;
+    justify-content: flex-start;
+  }
+}
+#sidebar.compact {
+  width: 60px;
+  min-width: 60px;
+  transition: all 0.3s;
+  overflow-x: hidden;
+}
+
+#sidebar.compact:hover {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  z-index: 1100;
+}
+
+#sidebar.compact .sidebar-header h3,
+#sidebar.compact .sidebar-header span,
+#sidebar.compact .sidebar-menu .menu-header,
+#sidebar.compact .sidebar-menu li .menu-text,
+#sidebar.compact .sidebar-footer,
+#sidebar.compact .sidebar-user-info {
+  display: none !important;
+}
+
+#sidebar.compact:hover .sidebar-header h3,
+#sidebar.compact:hover .sidebar-header span,
+#sidebar.compact:hover .sidebar-menu .menu-header,
+#sidebar.compact:hover .sidebar-menu li .menu-text,
+#sidebar.compact:hover .sidebar-footer,
+#sidebar.compact:hover .sidebar-user-info {
+  display: block !important;
+}
+
+#sidebar.compact .sidebar-header {
+  padding: 1.25rem 0.5rem;
+}
+
+#sidebar.compact .sidebar-menu li a {
+  padding: 0.8rem 0.9rem;
+  justify-content: center;
+}
+
+#sidebar.compact .sidebar-menu li a .fa,
+#sidebar.compact .sidebar-menu li a .fas,
+#sidebar.compact .sidebar-menu li a .far,
+#sidebar.compact .sidebar-menu li a .fab {
+  font-size: 1.25rem;
+}
+
+#sidebar.compact:hover .sidebar-header {
+  padding: 1.25rem;
+}
+
+#sidebar.compact:hover .sidebar-menu li a {
+  padding: 0.8rem 1.5rem;
+  justify-content: flex-start;
 }
 
 #sidebar {
@@ -196,6 +293,45 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   z-index: 1000;
   overflow-y: auto;
+}
+
+#sidebar.compact {
+  width: 60px;
+  min-width: 60px;
+  transition: all 0.3s;
+}
+
+#sidebar.compact .sidebar-header h3,
+#sidebar.compact .sidebar-header span,
+#sidebar.compact .sidebar-menu .menu-header,
+#sidebar.compact .sidebar-menu li .menu-text,
+#sidebar.compact .sidebar-footer,
+#sidebar.compact .sidebar-user-info {
+  display: none !important;
+}
+
+#sidebar.compact .sidebar-header {
+  padding: 1.25rem 0.5rem;
+}
+
+#sidebar.compact .sidebar-menu li a {
+  padding: 0.8rem 0.9rem;
+  justify-content: center;
+}
+
+#sidebar.compact .sidebar-menu li a .fa,
+#sidebar.compact .sidebar-menu li a .fas,
+#sidebar.compact .sidebar-menu li a .far,
+#sidebar.compact .sidebar-menu li a .fab {
+  font-size: 1.25rem;
+}
+
+#sidebar.compact .sidebar-menu li a.dropdown-toggle::after {
+  display: none !important;
+}
+
+#sidebar.compact:hover .sidebar-menu li a.dropdown-toggle::after {
+  display: inline-block !important;
 }
 
 #sidebar.collapsed {
@@ -231,6 +367,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.8rem 1.5rem;
   display: flex;
   align-items: center;
+  gap: 0.85em;
   color: var(--sidebar-text-color);
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
@@ -578,6 +715,26 @@ h1, h2, h3, h4, h5, h6 {
 .msg-avatar-img:hover {
   box-shadow: 0 4px 16px rgba(74, 105, 255, 0.18), 0 2px 8px rgba(30, 41, 59, 0.12);
   border-color: var(--primary-color);
+}
+
+.mega-menu-centered {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.mega-menu-full {
+  left: 0 !important;
+  right: 0 !important;
+  min-width: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: 0 0 1rem 1rem;
+  position: absolute !important;
+  z-index: 1050;
+}
+
+#content-relative-wrapper {
+  position: relative;
 }
 
 /*# sourceMappingURL=main.css.map */

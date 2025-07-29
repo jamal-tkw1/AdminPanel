@@ -1,5 +1,5 @@
 // Aura Pro Theme - Main SASS Source
-// Structure: _variables, _base, _animations, _layout, _sidebar, _topbar, _horizontal_nav, _responsive, _dropdown_avatars
+// Structure: _variables, _base, _animations, _layout, _sidebar, _topbar, _horizontal_nav, _responsive, _dropdown_avatars, _mega_menu
 
 @use './variables';
 @use './base';
@@ -10,3 +10,4 @@
 @use './horizontal_nav';
 @use './responsive';
 @use './dropdown_avatars';
+@use './mega_menu';

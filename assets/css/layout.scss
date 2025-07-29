@@ -11,6 +11,9 @@
     padding-left: var(--sidebar-width);
     transition: all 0.3s;
 }
+#content.sidebar-compact {
+    padding-left: 60px;
+}
 
 #content.full-width {
     padding-left: 0; 

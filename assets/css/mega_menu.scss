@@ -1,0 +1,22 @@
+// Mega Menu Styles for Aura Pro
+// This file contains styles for the horizontal mega menu and its settings panel
+
+.mega-menu-centered {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.mega-menu-full {
+  left: 0 !important;
+  right: 0 !important;
+  min-width: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: 0 0 1rem 1rem;
+  position: absolute !important;
+  z-index: 1050;
+}
+
+#content-relative-wrapper {
+  position: relative; 
+}
