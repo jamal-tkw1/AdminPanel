@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Pro - Premium Admin Dashboard</title>
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome 6.5.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="light-mode">
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-solid fa-rocket me-2"></i>Aura Pro</h3>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li class="menu-header">Main</li>
+                <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+
+                <li class="menu-header">Interface</li>
+                <li>
+                    <a href="#componentsSubmenu" data-bs-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle"><i class="fas fa-puzzle-piece"></i>Components</a>
+                    <ul class="collapse list-unstyled sidebar-submenu" id="componentsSubmenu">
+                        <li><a href="#">Alerts</a></li>
+                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">Cards</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#formsSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fas fa-edit"></i>Forms</a>
+                    <ul class="collapse list-unstyled sidebar-submenu" id="formsSubmenu">
+                        <li><a href="#">Basic Elements</a></li>
+                        <li><a href="#">Advanced Elements</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-header">Pages</li>
+                <li>
+                    <a href="#authSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                            class="fas fa-user-lock"></i>Authentication</a>
+                    <ul class="collapse list-unstyled sidebar-submenu" id="authSubmenu">
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li>
+                            <a href="#level2Submenu" data-bs-toggle="collapse" aria-expanded="false"
+                                class="dropdown-toggle">Level 2 Menu</a>
+                            <ul class="collapse list-unstyled sidebar-submenu" id="level2Submenu">
+                                <li><a href="#">Item 1</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Wrapper -->
+        <div id="content">
+            <!-- Top Bar -->
+            <nav class="navbar navbar-expand-lg top-navbar">
+                <div class="container-fluid">
+                    <!-- Left Side: Toggle & Brand -->
+                    <div class="d-flex align-items-center">
+                        <button type="button" id="sidebarCollapse" class="btn btn-light sidebar-toggle me-3">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <a class="navbar-brand d-none d-lg-flex align-items-center" href="#">
+                            <i class="fa-solid fa-rocket fs-4 me-2" style="color: var(--primary-color);"></i>
+                            <h5 class="mb-0">Aura Pro</h5>
+                        </a>
+                    </div>
+
+                    <!-- Right Side: Search, Icons, User -->
+                    <div class="d-flex align-items-center ms-auto position-relative">
+                        <!-- Search Bar (desktop) -->
+                        <form class="d-none d-md-flex me-3 search-form" role="search">
+                            <div class="input-group">
+                                <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+                                <button class="btn btn-outline-secondary" type="submit"
+                                    style="border-color: var(--border-color); color: var(--text-color);"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </form>
+                        <!-- Quick Search Icon (mobile) -->
+                        <button class="btn btn-link quick-search-mobile me-2" type="button" title="Quick Search (/)"
+                            style="color: var(--text-color); font-size: 1.2rem; display: none;">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                        <!-- Icons Nav -->
+                        <ul class="navbar-nav flex-row align-items-center">
+                            <!-- Theme Switcher -->
+                            <li class="nav-item d-flex align-items-center me-3">
+                                <div class="dark-mode-toggle" id="darkModeToggle" title="Toggle Theme">
+                                    <i class="fa-solid fa-moon fs-5"></i>
+                                </div>
+                            </li>
+
+                            <!-- Settings Shortcut -->
+                            <li class="nav-item d-flex align-items-center me-3">
+                                <a class="nav-link" href="#" title="Settings (S)">
+                                    <i class="fa-solid fa-gear fs-5"></i>
+                                </a>
+                            </li>
+                            <!-- Notifications Dropdown -->
+                            <li class="nav-item dropdown me-3">
+                                <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" title="Notifications (N)">
+                                    <i class="fa-solid fa-bell fs-5 notify-animate" id="notifBell"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style="font-size: 0.6em; padding: 0.3em 0.5em;">3+</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li class="dropdown-header">3 New Notifications</li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <!-- Example notification items (keep as before) -->
+                                    <li><a class="dropdown-item" href="#"><img
+                                                src="https://randomuser.me/api/portraits/men/32.jpg"
+                                                class="notif-avatar-img me-2" alt="User"> <span
+                                                class="msg-content"><span class="msg-title">New user
+                                                    registered</span><span class="msg-snippet">Welcome Alex
+                                                    Johnson!</span></span></a></li>
+
+                                    <li><a class="dropdown-item" href="#"><i
+                                                class="fa-solid fa-server text-warning"></i> <span
+                                                class="msg-content"><span class="msg-title">Server rebooted</span><span
+                                                    class="msg-snippet">Maintenance completed</span></span></a></li>
+                                    <li><a class="dropdown-item" href="#"><i
+                                                class="fa-solid fa-file-invoice-dollar text-primary"></i> <span
+                                                class="msg-content"><span class="msg-title">New invoice
+                                                    generated</span><span class="msg-snippet">Invoice
+                                                    #12345</span></span></a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <!-- Empty state example (hidden by default, show if no notifications) -->
+                                    <li class="dropdown-item text-center d-none" id="notif-empty">
+                                        <div style="padding: 1rem 0;">
+                                            <i class="fa-regular fa-bell-slash fa-2x mb-2 text-secondary"></i><br>
+                                            <span class="small text-muted">No new notifications</span>
+                                        </div>
+                                    </li>
+                                    <li><a class="dropdown-item text-center" href="#">View all notifications</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Messages Dropdown -->
+                            <li class="nav-item dropdown me-3">
+                                <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" title="Messages">
+                                    <i class="fa-solid fa-envelope fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                                        style="font-size: 0.6em; padding: 0.3em 0.5em;">1</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li class="dropdown-header">1 New Message</li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <!-- Example message item (keep as before) -->
+                                    <li><a class="dropdown-item" href="#">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                                class="msg-avatar-img me-2" alt="User">
+                                            <span class="msg-content">
+                                                <span class="msg-title">Alex Johnson</span>
+                                                <span class="msg-snippet">Sent you a message...</span>
+                                            </span>
+                                        </a></li>
+
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <!-- Empty state example (hidden by default, show if no messages) -->
+                                    <li class="dropdown-item text-center d-none" id="msg-empty">
+                                        <div style="padding: 1rem 0;">
+                                            <i class="fa-regular fa-envelope-open fa-2x mb-2 text-secondary"></i><br>
+                                            <span class="small text-muted">No new messages</span>
+                                        </div>
+                                    </li>
+                                    <li><a class="dropdown-item text-center" href="#">View all messages</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- User Profile Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center position-relative" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Account (A)">
+                                    <span style="position:relative;display:inline-block;">
+                                        <img src="https://placehold.co/40x40/4A69FF/FFFFFF?text=JD"
+                                            class="rounded-circle me-2" alt="User Avatar"
+                                            style="width: 32px; height: 32px;">
+                                        <span class="user-avatar-badge"></span>
+                                    </span>
+                                    <span class="d-none d-sm-inline">John Doe</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li class="dropdown-header text-center">
+                                        <span style="display:inline-block; position:relative;">
+                                            <img src="https://placehold.co/80x80/4A69FF/FFFFFF?text=JD"
+                                                class="dropdown-avatar-img" alt="User Avatar">
+                                        </span>
+                                        <div style="font-size:1.08rem; font-weight:600; color:var(--heading-color);">
+                                            John Doe</div>
+                                        <div style="font-size:0.92rem; color:var(--text-color); opacity:0.7;">
+                                            Administrator</div>
+                                    </li>
+
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>Profile</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-list-check"></i>My
+                                            Tasks</a></li>
+                                    <li><a class="dropdown-item" href="#"><i
+                                                class="fa-solid fa-clock-rotate-left"></i>Activity Log</a></li>
+                                    <li><a class="dropdown-item" href="#"><i
+                                                class="fa-solid fa-circle-question"></i>Help</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item text-danger fw-semibold" href="#"><i
+                                                class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Horizontal Navigation with Mega Menu -->
+            <nav class="navbar navbar-expand-lg horizontal-nav">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link active" href="#">Overview</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Reports</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Sales Report</a></li>
+                                    <li><a class="dropdown-item" href="#">User Report</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Mega Menu</a>
+                                <div class="dropdown-menu mega-menu">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>UI Components</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Grids & Layouts</a></li>
+                                                <li><a href="#">Buttons & Icons</a></li>
+                                                <li><a href="#">Typography</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Quick Links</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Settings</a></li>
+                                                <li><a href="#">Support Center</a></li>
+                                                <li><a href="#">Documentation</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Page Content -->
+            <main class="main-content p-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Stat Cards -->
+                        <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.1s;">
+                            <div class="card">
+                                <div class="card-body">... Sales ...</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.2s;">
+                            <div class="card">
+                                <div class="card-body">... Revenue ...</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.3s;">
+                            <div class="card">
+                                <div class="card-body">... Users ...</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.4s;">
+                            <div class="card">
+                                <div class="card-body">... Growth ...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card fade-in-up" style="animation-delay: 0.5s;">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Main Content Area</h5>
+                                    <!-- AI Assistant Button -->
+                                    <button class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#aiAssistantModal">
+                                        <i class="fa-solid fa-wand-magic-sparkles me-2"></i> ✨ AI Assistant
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <p>Welcome to Aura Pro! This template is built for premium performance and
+                                        aesthetics.</p>
+                                    <ul>
+                                        <li><strong>Glassmorphism:</strong> Notice the frosted glass effect on the cards
+                                            and navigation bars.</li>
+                                        <li><strong>Animations:</strong> Content fades in smoothly for a dynamic feel.
+                                        </li>
+                                        <li><strong>Dark Mode:</strong> Click the moon icon in the top bar to toggle
+                                            themes.</li>
+                                        <li><strong>Highly Customizable:</strong> Easily change the entire theme by
+                                            editing the CSS variables at the top of the <code>&lt;style&gt;</code> tag.
+                                        </li>
+                                        <li><strong>✨ AI Assistant:</strong> Click the button in the header to generate
+                                            content using the Gemini API.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- AI Assistant Modal -->
+    <div class="modal fade" id="aiAssistantModal" tabindex="-1" aria-labelledby="aiAssistantModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content"
+                style="background-color: var(--card-bg); backdrop-filter: blur(var(--glass-blur));">
+                <div class="modal-header" style="border-bottom-color: var(--border-color);">
+                    <h5 class="modal-title" id="aiAssistantModalLabel" style="color: var(--heading-color);"><i
+                            class="fa-solid fa-wand-magic-sparkles me-2"></i>AI Content Assistant</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="aiPrompt" class="form-label" style="color: var(--text-color);">Enter your
+                            prompt:</label>
+                        <textarea class="form-control" id="aiPrompt" rows="3"
+                            placeholder="e.g., Write a short welcome email for a new user signing up for our service."></textarea>
+                    </div>
+                    <button class="btn btn-primary" id="generateContentBtn">
+                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        Generate Content
+                    </button>
+                    <hr style="border-color: var(--border-color); margin: 1.5rem 0;">
+                    <h6 style="color: var(--heading-color);">Generated Content:</h6>
+                    <div id="aiResult"
+                        style="color: var(--text-color); min-height: 100px; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1rem; background-color: rgba(128, 128, 128, 0.1);">
+                        Your generated content will appear here...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

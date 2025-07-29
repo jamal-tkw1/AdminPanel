@@ -1,0 +1,13 @@
+@media (max-width: 992px) {
+    #sidebar { margin-left: calc(-1 * var(--sidebar-width)); }
+    #sidebar.collapsed { margin-left: 0; }
+    #content { padding-left: 0; }
+    .sidebar-toggle { display: block !important; }
+    .top-navbar .navbar-brand { display: none; }
+}
+
+@media (max-width: 576px) {
+    .top-navbar .search-form {
+        display: none !important;
+    }
+}

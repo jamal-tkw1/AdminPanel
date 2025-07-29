@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#content {
+    width: 100%;
+    padding-left: var(--sidebar-width);
+    transition: all 0.3s;
+}
+    
+#content.full-width {
+    padding-left: 0;
+}
