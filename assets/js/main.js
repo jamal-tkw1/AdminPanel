@@ -1,3 +1,160 @@
+// --- Begin migrated Mega Menu and App Settings logic ---
+document.addEventListener('DOMContentLoaded', function() {
+  // --- Mega Menu Settings Panel Logic ---
+  const megaMenuDropdown = document.getElementById('megaMenuDropdown');
+  const leftRadio = document.getElementById('megaMenuLeft');
+  const centerRadio = document.getElementById('megaMenuCenter');
+  const widthSelect = document.getElementById('megaMenuWidth');
+  const offsetInput = document.getElementById('megaMenuOffset');
+  const openSettingsBtn = document.getElementById('openMegaMenuSettings');
+  const contentWrapper = document.getElementById('content-relative-wrapper');
+  if (openSettingsBtn) {
+    openSettingsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const offcanvas = new bootstrap.Offcanvas(document.getElementById('megaMenuSettings'));
+      offcanvas.show();
+    });
+  }
+  function moveMegaMenuToContentWrapper() {
+    if (contentWrapper && megaMenuDropdown && !contentWrapper.contains(megaMenuDropdown)) {
+      contentWrapper.appendChild(megaMenuDropdown);
+    }
+  }
+  function moveMegaMenuToNavParent() {
+    const navParent = document.getElementById('megaMenuParent');
+    if (navParent && megaMenuDropdown && !navParent.contains(megaMenuDropdown)) {
+      navParent.appendChild(megaMenuDropdown);
+    }
+  }
+  function updateAlignment() {
+    if (!megaMenuDropdown) return;
+    if (centerRadio && centerRadio.checked) {
+      megaMenuDropdown.classList.add('mega-menu-centered');
+      moveMegaMenuToContentWrapper();
+      megaMenuDropdown.classList.remove('mega-menu-full');
+      if (widthSelect && widthSelect.value !== 'full') {
+        megaMenuDropdown.style.minWidth = widthSelect.value + 'px';
+        megaMenuDropdown.style.width = widthSelect.value + 'px';
+        megaMenuDropdown.style.maxWidth = '';
+      }
+    } else {
+      megaMenuDropdown.classList.remove('mega-menu-centered');
+      if (widthSelect && widthSelect.value !== 'full') {
+        moveMegaMenuToNavParent();
+      }
+    }
+    updateWidth();
+  }
+  if (leftRadio) leftRadio.addEventListener('change', updateAlignment);
+  if (centerRadio) centerRadio.addEventListener('change', updateAlignment);
+  function updateWidth() {
+    if (!megaMenuDropdown) return;
+    megaMenuDropdown.classList.remove('mega-menu-full');
+    megaMenuDropdown.style.position = '';
+    megaMenuDropdown.style.left = '';
+    megaMenuDropdown.style.right = '';
+    megaMenuDropdown.style.minWidth = '';
+    megaMenuDropdown.style.width = '';
+    megaMenuDropdown.style.maxWidth = '';
+    if (widthSelect && widthSelect.value === 'full') {
+      megaMenuDropdown.classList.add('mega-menu-full');
+      moveMegaMenuToContentWrapper();
+    } else {
+      if (centerRadio && centerRadio.checked) {
+        moveMegaMenuToContentWrapper();
+      } else {
+        moveMegaMenuToNavParent();
+      }
+      if (widthSelect) {
+        megaMenuDropdown.style.minWidth = widthSelect.value + 'px';
+        megaMenuDropdown.style.width = widthSelect.value + 'px';
+      }
+    }
+  }
+  if (widthSelect) widthSelect.addEventListener('change', updateWidth);
+  function updateOffset() {
+    if (!megaMenuDropdown) return;
+    megaMenuDropdown.style.top = offsetInput && offsetInput.value ? offsetInput.value + 'px' : '';
+  }
+  if (offsetInput) offsetInput.addEventListener('input', updateOffset);
+  // Initial state
+  updateAlignment();
+  updateWidth();
+  updateOffset();
+
+  // --- App Settings Panel Logic (horizontal nav, breadcrumb, etc) ---
+  const openAppSettingsBtn = document.getElementById('openAppSettings');
+  const appSettingsPanel = document.getElementById('appSettingsPanel');
+  const toggleHorizontalMenu = document.getElementById('toggleHorizontalMenu');
+  const horizontalNav = document.getElementById('horizontalNavBar');
+  const breadcrumbNav = document.getElementById('breadcrumbNav');
+  const breadcrumbBefore = document.getElementById('breadcrumbBefore');
+  const breadcrumbAfter = document.getElementById('breadcrumbAfter');
+  if (openAppSettingsBtn && appSettingsPanel) {
+    openAppSettingsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const offcanvas = new bootstrap.Offcanvas(appSettingsPanel);
+      offcanvas.show();
+    });
+  }
+  if (toggleHorizontalMenu && horizontalNav) {
+    if (localStorage.getItem('horizontalMenuEnabled') === 'false') {
+      toggleHorizontalMenu.checked = false;
+      horizontalNav.style.display = 'none';
+    }
+    toggleHorizontalMenu.addEventListener('change', function() {
+      horizontalNav.style.display = this.checked ? '' : 'none';
+      localStorage.setItem('horizontalMenuEnabled', this.checked);
+    });
+  }
+  function setBreadcrumbPosition(pos) {
+    if (!horizontalNav || !breadcrumbNav) return;
+    if (pos === 'before') {
+      horizontalNav.parentNode.insertBefore(breadcrumbNav, horizontalNav);
+    } else {
+      horizontalNav.parentNode.insertBefore(breadcrumbNav, horizontalNav.nextSibling);
+    }
+    localStorage.setItem('breadcrumbPosition', pos);
+  }
+  if (breadcrumbBefore && breadcrumbAfter && horizontalNav && breadcrumbNav) {
+    const savedPos = localStorage.getItem('breadcrumbPosition') || 'after';
+    if (savedPos === 'before') {
+      breadcrumbBefore.checked = true;
+      setBreadcrumbPosition('before');
+    } else {
+      breadcrumbAfter.checked = true;
+      setBreadcrumbPosition('after');
+    }
+    breadcrumbBefore.addEventListener('change', function() {
+      if (this.checked) setBreadcrumbPosition('before');
+    });
+    breadcrumbAfter.addEventListener('change', function() {
+      if (this.checked) setBreadcrumbPosition('after');
+    });
+  }
+
+  // --- Sidebar multi-level menu logic (from inline) ---
+  document.querySelectorAll('#sidebar .dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const submenu = this.nextElementSibling;
+      if (!submenu) return;
+      const isOpen = submenu.classList.contains('open');
+      const parentUl = this.closest('ul');
+      if (parentUl) {
+        parentUl.querySelectorAll('.sidebar-submenu.open').forEach(function(openSub) {
+          if (openSub !== submenu) openSub.classList.remove('open');
+        });
+        parentUl.querySelectorAll('.dropdown-toggle.open').forEach(function(openTog) {
+          if (openTog !== toggle) openTog.classList.remove('open');
+        });
+      }
+      submenu.classList.toggle('open', !isOpen);
+      this.classList.toggle('open', !isOpen);
+    });
+  });
+});
+// --- End migrated Mega Menu and App Settings logic ---
 document.addEventListener("DOMContentLoaded", function () {
   // Force sidebar to be compact and hide toggle button on mobile devices
   function handleSidebarMobile() {
@@ -30,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (sidebarCollapse && sidebar && content) {
     sidebarCollapse.addEventListener("click", function () {
+      debugger;
       sidebar.classList.toggle("compact");
       content.classList.toggle("sidebar-compact");
       // Optionally persist state
