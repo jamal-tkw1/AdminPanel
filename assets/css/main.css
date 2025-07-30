@@ -192,17 +192,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 0;
 }
 
-/* By default, compact mode is enabled up to medium devices */
-@media (max-width: 991.98px) {
-  #sidebar.compact {
-    width: 60px;
-    min-width: 60px;
-  }
-  #sidebar.compact:hover {
-    width: var(--sidebar-width);
-    min-width: var(--sidebar-width);
-  }
-}
 @media (min-width: 992px) {
   #sidebar.compact {
     width: var(--sidebar-width);
@@ -644,23 +633,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-color);
 }
 
-@media (max-width: 992px) {
-  #sidebar {
-    margin-left: calc(-1 * var(--sidebar-width));
-  }
-  #sidebar.collapsed {
-    margin-left: 0;
-  }
-  #content {
-    padding-left: 0;
-  }
-  .sidebar-toggle {
-    display: block !important;
-  }
-  .top-navbar .navbar-brand {
-    display: none;
-  }
-}
 @media (max-width: 576px) {
   .top-navbar .search-form {
     display: none !important;

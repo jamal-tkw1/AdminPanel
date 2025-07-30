@@ -21,7 +21,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/sidebar.css" rel="stylesheet">
 </head>
 
 <body data-bs-theme="light">
@@ -616,27 +615,27 @@
         toggleSidebarGlass = document.getElementById('toggleSidebarGlass');
       }
       // Load sidebar style from localStorage
-      if (localStorage.getItem('sidebarCompact') === 'false') {
-        toggleSidebarCompact.checked = false;
-        sidebar.classList.add('expanded');
-        content.classList.add('expanded');
-      }
-      if (localStorage.getItem('sidebarGlass') === 'false') {
-        toggleSidebarGlass.checked = false;
-        sidebar.classList.add('noglass');
-      }
-      // Compact toggle
-      toggleSidebarCompact.addEventListener('change', function() {
-        if (this.checked) {
-          sidebar.classList.remove('expanded');
-          content.classList.remove('expanded');
-          localStorage.setItem('sidebarCompact', 'true');
-        } else {
-          sidebar.classList.add('expanded');
-          content.classList.add('expanded');
-          localStorage.setItem('sidebarCompact', 'false');
-        }
-      });
+    //   if (localStorage.getItem('sidebarCompact') === 'false') {
+    //     toggleSidebarCompact.checked = false;
+    //     sidebar.classList.add('expanded');
+    //     content.classList.add('expanded');
+    //   }
+    //   if (localStorage.getItem('sidebarGlass') === 'false') {
+    //     toggleSidebarGlass.checked = false;
+    //     sidebar.classList.add('noglass');
+    //   }
+    //   // Compact toggle
+    //   toggleSidebarCompact.addEventListener('change', function() {
+    //     if (this.checked) {
+    //       sidebar.classList.remove('expanded');
+    //       content.classList.remove('expanded');
+    //       localStorage.setItem('sidebarCompact', 'true');
+    //     } else {
+    //       sidebar.classList.add('expanded');
+    //       content.classList.add('expanded');
+    //       localStorage.setItem('sidebarCompact', 'false');
+    //     }
+    //   });
       // Glassmorphism toggle
       toggleSidebarGlass.addEventListener('change', function() {
         if (this.checked) {
@@ -647,36 +646,36 @@
           localStorage.setItem('sidebarGlass', 'false');
         }
       });
-      // Expand on hover (desktop, only if compact)
-      sidebar.addEventListener('mouseenter', function() {
-        if (toggleSidebarCompact.checked) {
-          sidebar.classList.add('expanded');
-          content.classList.add('expanded');
-        }
-      });
-      sidebar.addEventListener('mouseleave', function() {
-        if (toggleSidebarCompact.checked) {
-          sidebar.classList.remove('expanded');
-          content.classList.remove('expanded');
-        }
-      });
-      // Expand/collapse on mobile toggle
-      const sidebarToggle = document.getElementById('sidebarCollapse');
-      if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', function() {
-          // Toggle compact mode instead of just expanded
-          const isCompact = sidebar.classList.toggle('compact');
-          if (isCompact) {
-            sidebar.classList.remove('compact');
-            content.classList.remove('compact');
-            localStorage.setItem('sidebarCompact', 'true');
-          } else {
-            sidebar.classList.add('compact');
-            content.classList.add('compact');
-            localStorage.setItem('sidebarCompact', 'false');
-          }
-        });
-      }
+    //   // Expand on hover (desktop, only if compact)
+    //   sidebar.addEventListener('mouseenter', function() {
+    //     if (toggleSidebarCompact.checked) {
+    //       sidebar.classList.add('expanded');
+    //       content.classList.add('expanded');
+    //     }
+    //   });
+    //   sidebar.addEventListener('mouseleave', function() {
+    //     if (toggleSidebarCompact.checked) {
+    //       sidebar.classList.remove('expanded');
+    //       content.classList.remove('expanded');
+    //     }
+    //   });
+    //   // Expand/collapse on mobile toggle
+    //   const sidebarToggle = document.getElementById('sidebarCollapse');
+    //   if (sidebarToggle) {
+    //     sidebarToggle.addEventListener('click', function() {
+    //       // Toggle compact mode instead of just expanded
+    //       const isCompact = sidebar.classList.toggle('compact');
+    //       if (isCompact) {
+    //         sidebar.classList.remove('compact');
+    //         content.classList.remove('compact');
+    //         localStorage.setItem('sidebarCompact', 'true');
+    //       } else {
+    //         sidebar.classList.add('compact');
+    //         content.classList.add('compact');
+    //         localStorage.setItem('sidebarCompact', 'false');
+    //       }
+    //     });
+    //   }
       // Multi-level menu logic
       document.querySelectorAll('#sidebar .dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {

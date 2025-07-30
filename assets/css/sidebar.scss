@@ -1,14 +1,14 @@
-/* By default, compact mode is enabled up to medium devices */
-@media (max-width: 991.98px) {
-  #sidebar.compact {
-    width: 60px;
-    min-width: 60px;
-  }
-  #sidebar.compact:hover {
-    width: var(--sidebar-width);
-    min-width: var(--sidebar-width);
-  }
-}
+// /* By default, compact mode is enabled up to medium devices */
+// @media (max-width: 991.98px) {
+//   #sidebar.compact {
+//     width: 60px;
+//     min-width: 60px;
+//   }
+//   #sidebar.compact:hover {
+//     width: var(--sidebar-width);
+//     min-width: var(--sidebar-width);
+//   }
+// }
 
 @media (min-width: 992px) {
   #sidebar.compact {

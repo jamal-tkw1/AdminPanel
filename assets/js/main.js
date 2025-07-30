@@ -1,23 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Sidebar Toggle
-  const sidebarCollapse = document.getElementById("sidebarCollapse");
-  if (sidebarCollapse) {
-    sidebarCollapse.addEventListener("click", function () {
-      const sidebar = document.getElementById("sidebar");
-      const content = document.getElementById("content");
-      sidebar.classList.toggle("compact");
-      // Optionally adjust content width if needed
-      if (content) {
-        if (sidebar.classList.contains("compact")) {
-          content.classList.add("sidebar-compact");
-        } else {
-          content.classList.remove("sidebar-compact");
-        }
+  // Force sidebar to be compact and hide toggle button on mobile devices
+  function handleSidebarMobile() {
+    const sidebar = document.getElementById("sidebar");
+    const content = document.getElementById("content");
+    const sidebarCollapse = document.getElementById("sidebarCollapse");
+    if (window.innerWidth <= 991.98) {
+      if (sidebar && !sidebar.classList.contains("compact")) {
+        sidebar.classList.add("compact");
       }
-      // Persist compact state
-      localStorage.setItem("sidebarCompact", sidebar.classList.contains("compact"));
+      if (content) {
+        content.classList.add("sidebar-compact");
+      }
+      if (sidebarCollapse) {
+        sidebarCollapse.style.display = "none";
+      }
+    } else {
+      if (sidebarCollapse) {
+        sidebarCollapse.style.display = "";
+      }
+    }
+  }
+  handleSidebarMobile();
+  window.addEventListener("resize", handleSidebarMobile);
+
+  // Sidebar Toggle (compact mode)
+  const sidebarCollapse = document.getElementById("sidebarCollapse");
+  const sidebar = document.getElementById("sidebar");
+  const content = document.getElementById("content");
+
+  if (sidebarCollapse && sidebar && content) {
+    sidebarCollapse.addEventListener("click", function () {
+      sidebar.classList.toggle("compact");
+      content.classList.toggle("sidebar-compact");
+      // Optionally persist state
+      localStorage.setItem(
+        "sidebarCompact",
+        sidebar.classList.contains("compact")
+      );
     });
   }
+  // Sidebar JS removed: Sidebar is now fully CSS/SCSS-driven. No JS toggling or hiding.
 
   // Only use data-bs-theme for theme switching (light/dark)
   const body = document.body;
@@ -87,60 +109,65 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-    // App Settings Panel Logic
-    document.addEventListener('DOMContentLoaded', function() {
-      const openAppSettingsBtn = document.getElementById('openAppSettings');
-      const appSettingsPanel = document.getElementById('appSettingsPanel');
-      const toggleHorizontalMenu = document.getElementById('toggleHorizontalMenu');
-      const horizontalNav = document.getElementById('horizontalNavBar');
-      const breadcrumbNav = document.getElementById('breadcrumbNav');
-      const breadcrumbBefore = document.getElementById('breadcrumbBefore');
-      const breadcrumbAfter = document.getElementById('breadcrumbAfter');
-      // Open App Settings panel
-      openAppSettingsBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const offcanvas = new bootstrap.Offcanvas(appSettingsPanel);
-        offcanvas.show();
-      });
-      // Load setting from localStorage
-      if (localStorage.getItem('horizontalMenuEnabled') === 'false') {
-        toggleHorizontalMenu.checked = false;
-        if (horizontalNav) horizontalNav.style.display = 'none';
-      }
-      // Toggle horizontal menu
-      toggleHorizontalMenu.addEventListener('change', function() {
-        if (horizontalNav) horizontalNav.style.display = this.checked ? '' : 'none';
-        localStorage.setItem('horizontalMenuEnabled', this.checked);
-      });
-
-      // Breadcrumb position logic
-      function setBreadcrumbPosition(pos) {
-        if (!horizontalNav || !breadcrumbNav) return;
-        if (pos === 'before') {
-          horizontalNav.parentNode.insertBefore(breadcrumbNav, horizontalNav);
-        } else {
-          horizontalNav.parentNode.insertBefore(breadcrumbNav, horizontalNav.nextSibling);
-        }
-        localStorage.setItem('breadcrumbPosition', pos);
-      }
-      // Set initial state from localStorage
-      const savedPos = localStorage.getItem('breadcrumbPosition') || 'after';
-      if (savedPos === 'before') {
-        breadcrumbBefore.checked = true;
-        setBreadcrumbPosition('before');
-      } else {
-        breadcrumbAfter.checked = true;
-        setBreadcrumbPosition('after');
-      }
-      // Listen for changes
-      breadcrumbBefore.addEventListener('change', function() {
-        if (this.checked) setBreadcrumbPosition('before');
-      });
-      breadcrumbAfter.addEventListener('change', function() {
-        if (this.checked) setBreadcrumbPosition('after');
-      });
+  // App Settings Panel Logic
+  document.addEventListener("DOMContentLoaded", function () {
+    const openAppSettingsBtn = document.getElementById("openAppSettings");
+    const appSettingsPanel = document.getElementById("appSettingsPanel");
+    const toggleHorizontalMenu = document.getElementById(
+      "toggleHorizontalMenu"
+    );
+    const horizontalNav = document.getElementById("horizontalNavBar");
+    const breadcrumbNav = document.getElementById("breadcrumbNav");
+    const breadcrumbBefore = document.getElementById("breadcrumbBefore");
+    const breadcrumbAfter = document.getElementById("breadcrumbAfter");
+    // Open App Settings panel
+    openAppSettingsBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const offcanvas = new bootstrap.Offcanvas(appSettingsPanel);
+      offcanvas.show();
+    });
+    // Load setting from localStorage
+    if (localStorage.getItem("horizontalMenuEnabled") === "false") {
+      toggleHorizontalMenu.checked = false;
+      if (horizontalNav) horizontalNav.style.display = "none";
+    }
+    // Toggle horizontal menu
+    toggleHorizontalMenu.addEventListener("change", function () {
+      if (horizontalNav)
+        horizontalNav.style.display = this.checked ? "" : "none";
+      localStorage.setItem("horizontalMenuEnabled", this.checked);
     });
 
+    // Breadcrumb position logic
+    function setBreadcrumbPosition(pos) {
+      if (!horizontalNav || !breadcrumbNav) return;
+      if (pos === "before") {
+        horizontalNav.parentNode.insertBefore(breadcrumbNav, horizontalNav);
+      } else {
+        horizontalNav.parentNode.insertBefore(
+          breadcrumbNav,
+          horizontalNav.nextSibling
+        );
+      }
+      localStorage.setItem("breadcrumbPosition", pos);
+    }
+    // Set initial state from localStorage
+    const savedPos = localStorage.getItem("breadcrumbPosition") || "after";
+    if (savedPos === "before") {
+      breadcrumbBefore.checked = true;
+      setBreadcrumbPosition("before");
+    } else {
+      breadcrumbAfter.checked = true;
+      setBreadcrumbPosition("after");
+    }
+    // Listen for changes
+    breadcrumbBefore.addEventListener("change", function () {
+      if (this.checked) setBreadcrumbPosition("before");
+    });
+    breadcrumbAfter.addEventListener("change", function () {
+      if (this.checked) setBreadcrumbPosition("after");
+    });
+  });
 
   // Animate notification bell if there are new notifications
   const notifBell = document.getElementById("notifBell");
