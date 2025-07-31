@@ -1,3 +1,168 @@
+// Recent Activity Widget Header Styles
+.recent-activity-header {
+  background: var(--activity-header-bg, rgba(0,0,0,0.01));
+  border-bottom: 1px solid var(--activity-header-border, #e9ecef);
+  min-height: 56px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.activity-header-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--primary-color, #4A69FF);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px 0 rgba(80,80,120,0.07);
+  margin-right: 0.5rem;
+}
+.activity-header-link {
+  color: var(--primary-color, #4A69FF);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.activity-header-link:hover {
+  color: var(--success-color, #198754);
+}
+.recent-activity-body {
+  background: var(--activity-body-bg, transparent);
+  transition: background 0.2s;
+}
+
+// Theme overrides for dark mode
+[data-bs-theme="dark"] {
+  --activity-header-bg: #23272f;
+  --activity-header-border: #343a40;
+  --activity-body-bg: #23272f;
+}
+// Team Chat Widget Styles
+.team-chat-card {
+  background: var(--card-bg, #fff);
+  box-shadow: 0 2px 12px 0 rgba(80,80,120,0.07);
+  border-radius: 1rem;
+  transition: background 0.2s;
+}
+.team-chat-header {
+  background: var(--chat-header-bg, rgba(0,0,0,0.01));
+  border-bottom: 1px solid var(--chat-header-border, #e9ecef);
+  min-height: 56px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.chat-header-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--primary-color, #4A69FF);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px 0 rgba(80,80,120,0.07);
+  margin-right: 0.5rem;
+}
+.chat-header-link {
+  color: var(--success, #20c997);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.chat-header-link:hover {
+  color: var(--primary-color, #4A69FF);
+}
+.team-chat-body {
+  background: var(--chat-body-bg, transparent);
+  transition: background 0.2s;
+}
+.team-chat-list {
+  padding: 0;
+  margin: 0;
+}
+.chat-bubble {
+  display: inline-block;
+  max-width: 320px;
+  padding: 0.6rem 1.1rem;
+  border-radius: 1.2rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(80,80,120,0.07);
+  transition: background 0.2s, color 0.2s;
+  word-break: break-word;
+}
+.chat-bubble-left {
+  background: var(--chat-bubble-left-bg, #f5f6fa);
+  color: var(--chat-bubble-left-color, #222);
+  border-bottom-left-radius: 0.3rem;
+}
+.chat-bubble-right {
+  background: var(--chat-bubble-right-bg, var(--primary-color, #4A69FF));
+  color: var(--chat-bubble-right-color, #fff);
+  border-bottom-right-radius: 0.3rem;
+}
+.team-chat-list li:hover .chat-bubble {
+  filter: brightness(0.98);
+  box-shadow: 0 4px 16px 0 rgba(80,80,120,0.10);
+}
+.team-chat-footer {
+  background: var(--chat-footer-bg, transparent);
+  border-top: 1px solid var(--chat-footer-border, #e9ecef);
+  transition: background 0.2s, border-color 0.2s;
+}
+.chat-input {
+  border-radius: 2rem;
+  border: 1px solid var(--chat-input-border, #e0e0e0);
+  background: var(--chat-input-bg, #f8f9fa);
+  color: var(--chat-input-color, #222);
+  font-size: 1rem;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  box-shadow: none;
+}
+.chat-input:focus {
+  border-color: var(--primary-color, #4A69FF);
+  background: var(--chat-input-bg-focus, #fff);
+  outline: none;
+}
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  height: 1.5rem;
+}
+.typing-indicator span {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--chat-typing-dot, #bbb);
+  border-radius: 50%;
+  animation: typing-bounce 1.2s infinite both;
+}
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes typing-bounce {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.7; }
+  40% { transform: scale(1.2); opacity: 1; }
+}
+
+// Theme overrides for dark mode
+[data-bs-theme="dark"] {
+  --card-bg: #23272f;
+  --chat-header-bg: #23272f;
+  --chat-header-border: #343a40;
+  --chat-body-bg: #23272f;
+  --chat-bubble-left-bg: #23272f;
+  --chat-bubble-left-color: #e9ecef;
+  --chat-bubble-right-bg: #4A69FF;
+  --chat-bubble-right-color: #fff;
+  --chat-footer-bg: #23272f;
+  --chat-footer-border: #343a40;
+  --chat-input-bg: #23272f;
+  --chat-input-bg-focus: #23272f;
+  --chat-input-color: #e9ecef;
+  --chat-input-border: #343a40;
+  --chat-typing-dot: #666;
+}
 // Flat design stat cards for dashboard
 
 .stat-card-flat {
