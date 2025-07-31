@@ -214,7 +214,7 @@
                         <button type="button" id="sidebarCollapse" class="btn btn-light sidebar-toggle me-3">
                             <i class="fas fa-align-left"></i>
                         </button>
-                        <a class="navbar-brand d-none d-lg-flex align-items-center" href="#">
+                        <a class="navbar-brand d-md-flex align-items-center" href="#">
                             <i class="fa-solid fa-rocket fs-4 me-2" style="color: var(--primary-color);"></i>
                             <h5 class="mb-0">Aura Pro</h5>
                         </a>
@@ -226,16 +226,28 @@
                         <form class="d-none d-md-flex me-3 search-form" role="search">
                             <div class="input-group">
                                 <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
-                                <button class="btn btn-outline-secondary" type="submit"
-                                    style="border-color: var(--border-color); color: var(--text-color);"><i
-                                        class="fa-solid fa-magnifying-glass"></i></button>
+                                <button class="btn btn-outline-secondary" type="submit" style="border-color: var(--border-color); color: var(--text-color);"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </form>
                         <!-- Quick Search Icon (mobile) -->
-                        <button class="btn btn-link quick-search-mobile me-2" type="button" title="Quick Search (/)"
-                            style="color: var(--text-color); font-size: 1.2rem; display: none;">
+                        <button class="btn btn-link d-md-none me-2" type="button" title="Quick Search" style="color: var(--text-color); font-size: 1.2rem;" data-bs-toggle="offcanvas" data-bs-target="#mobileSearchOffcanvas" aria-controls="mobileSearchOffcanvas">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
+    <!-- Mobile Search Offcanvas (moved outside navbar for correct overlay) -->
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="mobileSearchOffcanvas" aria-labelledby="mobileSearchOffcanvasLabel" style="height: 80px;">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileSearchOffcanvasLabel"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body pt-0">
+        <form class="search-form w-100" role="search">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit" style="border-color: var(--border-color); color: var(--text-color);"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
 
                         <!-- Icons Nav -->
                         <ul class="navbar-nav flex-row align-items-center">

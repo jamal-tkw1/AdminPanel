@@ -1,3 +1,25 @@
+/* Mobile search offcanvas height and centering fix */
+#mobileSearchOffcanvas.offcanvas-top {
+  height: 120px !important;
+  min-height: 80px;
+  max-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#mobileSearchOffcanvas .offcanvas-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 1rem;
+}
+#mobileSearchOffcanvas .input-group {
+  width: 100%;
+  max-width: 600px;
+}
 .top-navbar {
     height: var(--topbar-height);
     background: var(--topbar-bg);
