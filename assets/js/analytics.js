@@ -255,3 +255,148 @@ new Chart(document.getElementById("ordersByStatusChart").getContext("2d"), {
     scales: { y: { beginAtZero: true } },
   },
 });
+
+// --- Advanced Analytics Chart.js Logic ---
+if (window.Chart) {
+  // CLV Trend
+  new Chart(document.getElementById('clvTrendChart'), {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+      datasets: [{
+        label: 'CLV',
+        data: [220, 240, 260, 250, 270, 300, 320],
+        borderColor: '#0dcaf0',
+        backgroundColor: 'rgba(13,202,240,0.1)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 4,
+        pointBackgroundColor: '#0dcaf0',
+      }]
+    },
+    options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+  });
+
+  // Sales Funnel (Funnel chart simulated with horizontal bar)
+  new Chart(document.getElementById('salesFunnelChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Visitors', 'Added to Cart', 'Checkout', 'Paid', 'Shipped'],
+      datasets: [{
+        label: 'Funnel',
+        data: [5000, 2200, 1200, 900, 850],
+        backgroundColor: [
+          '#0d6efd', '#0dcaf0', '#ffc107', '#198754', '#6f42c1'
+        ],
+        borderRadius: 12,
+        barPercentage: 0.7,
+        categoryPercentage: 0.7
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: { x: { beginAtZero: true } }
+    }
+  });
+
+  // Churn Rate
+  new Chart(document.getElementById('churnRateChart'), {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+      datasets: [{
+        label: 'Churn %',
+        data: [4.2, 4.5, 4.1, 4.8, 5.0, 4.7, 4.3],
+        borderColor: '#dc3545',
+        backgroundColor: 'rgba(220,53,69,0.1)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 4,
+        pointBackgroundColor: '#dc3545',
+      }]
+    },
+    options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+  });
+
+  // Order Fulfillment Time
+  new Chart(document.getElementById('fulfillmentTimeChart'), {
+    type: 'line',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Hours',
+        data: [18, 16, 15, 14, 13, 17, 19],
+        borderColor: '#ffc107',
+        backgroundColor: 'rgba(255,193,7,0.1)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 4,
+        pointBackgroundColor: '#ffc107',
+      }]
+    },
+    options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+  });
+
+  // Net Promoter Score (NPS)
+  new Chart(document.getElementById('npsChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Promoters', 'Passives', 'Detractors'],
+      datasets: [{
+        label: 'NPS',
+        data: [68, 22, 10],
+        backgroundColor: ['#6c757d', '#0dcaf0', '#dc3545'],
+        borderRadius: 8
+      }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, max: 100 } }
+    }
+  });
+
+  // Sales Heatmap (simulate with matrix chart using Chart.js bubble)
+  const heatmapCanvas = document.getElementById('salesHeatmapChart');
+  if (heatmapCanvas) {
+    const ctx = heatmapCanvas.getContext('2d');
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    const hours = [8, 10, 12, 14, 16, 18, 20];
+    const heatmapData = [];
+    for (let d = 0; d < days.length; d++) {
+      for (let h = 0; h < hours.length; h++) {
+        heatmapData.push({
+          x: h,
+          y: d,
+          r: Math.floor(Math.random() * 12) + 6 // random bubble size
+        });
+      }
+    }
+    new Chart(ctx, {
+      type: 'bubble',
+      data: {
+        datasets: [{
+          label: 'Sales',
+          data: heatmapData,
+          backgroundColor: 'rgba(13,110,253,0.5)',
+          borderColor: '#0d6efd',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: {
+          x: {
+            title: { display: true, text: 'Hour' },
+            min: 7, max: 21, ticks: { stepSize: 2, callback: v => v+':00' }
+          },
+          y: {
+            title: { display: true, text: 'Day' },
+            min: -0.5, max: 6.5,
+            ticks: { callback: v => days[v] }
+          }
+        }
+      }
+    });
+  }
+}

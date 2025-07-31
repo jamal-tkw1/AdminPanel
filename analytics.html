@@ -79,6 +79,7 @@
         </div>
     </div>
     </div>
+
     <!-- Mega Menu Settings Offcanvas -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="megaMenuSettings" aria-labelledby="megaMenuSettingsLabel">
         <div class="offcanvas-header">
@@ -1268,7 +1269,119 @@
                         </div>
                     </div>
 
+
+
+                    <!-- Advanced Analytics Additions Start -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-4">
+                            <div class="card analytics-card p-4 gradient-card" style="background:linear-gradient(135deg,#f8fafc 0,#e0e7ef 100%);">
+                                <div class="d-flex align-items-center mb-3 gap-2">
+                                    <span class="d-flex align-items-center justify-content-center bg-info text-white rounded-circle analytics-header-icon"><i class="fa fa-coins"></i></span>
+                                    <h6 class="mb-0 fw-semibold">Customer Lifetime Value (CLV)</h6>
+                                    <span class="badge bg-info ms-2">New</span>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="clvTrendChart" height="80"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card analytics-card p-4 gradient-card" style="background:linear-gradient(135deg,#f8fafc 0,#e0e7ef 100%);">
+                                <div class="d-flex align-items-center mb-3 gap-2">
+                                    <span class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle analytics-header-icon"><i class="fa fa-filter"></i></span>
+                                    <h6 class="mb-0 fw-semibold">Sales Funnel</h6>
+                                    <span class="badge bg-primary ms-2">Funnel</span>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="salesFunnelChart" height="80"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card analytics-card p-4 gradient-card" style="background:linear-gradient(135deg,#f8fafc 0,#e0e7ef 100%);">
+                                <div class="d-flex align-items-center mb-3 gap-2">
+                                    <span class="d-flex align-items-center justify-content-center bg-danger text-white rounded-circle analytics-header-icon"><i class="fa fa-user-slash"></i></span>
+                                    <h6 class="mb-0 fw-semibold">Churn Rate</h6>
+                                    <span class="badge bg-danger ms-2">Critical</span>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="churnRateChart" height="80"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-6">
+                            <div class="card analytics-card p-4 gradient-card" style="background:linear-gradient(135deg,#f8fafc 0,#e0e7ef 100%);">
+                                <div class="d-flex align-items-center mb-3 gap-2">
+                                    <span class="d-flex align-items-center justify-content-center bg-success text-white rounded-circle analytics-header-icon"><i class="fa fa-users"></i></span>
+                                    <h6 class="mb-0 fw-semibold">Top Customer Segments</h6>
+                                    <span class="badge bg-success ms-2">Segments</span>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-hover align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Segment</th>
+                                                <th>Customers</th>
+                                                <th>Revenue</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>North America</td><td>1,200</td><td>$18,000</td></tr>
+                                            <tr><td>Europe</td><td>950</td><td>$14,500</td></tr>
+                                            <tr><td>Asia</td><td>800</td><td>$12,200</td></tr>
+                                            <tr><td>Mobile Users</td><td>1,100</td><td>$16,800</td></tr>
+                                            <tr><td>Loyalty Tier Gold</td><td>400</td><td>$9,500</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card analytics-card p-4 gradient-card" style="background:linear-gradient(135deg,#f8fafc 0,#e0e7ef 100%);">
+                                <div class="d-flex align-items-center mb-3 gap-2">
+                                    <span class="d-flex align-items-center justify-content-center bg-warning text-dark rounded-circle analytics-header-icon"><i class="fa fa-shipping-fast"></i></span>
+                                    <h6 class="mb-0 fw-semibold">Order Fulfillment Time</h6>
+                                    <span class="badge bg-warning text-dark ms-2">Trend</span>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="fulfillmentTimeChart" height="80"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-4">
+                            <div class="card analytics-card p-4 gradient-card" style="background:linear-gradient(135deg,#f8fafc 0,#e0e7ef 100%);">
+                                <div class="d-flex align-items-center mb-3 gap-2">
+                                    <span class="d-flex align-items-center justify-content-center bg-secondary text-white rounded-circle analytics-header-icon"><i class="fa fa-smile"></i></span>
+                                    <h6 class="mb-0 fw-semibold">Net Promoter Score (NPS)</h6>
+                                    <span class="badge bg-secondary ms-2">NPS</span>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="npsChart" height="80"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="card analytics-card p-4 gradient-card" style="background:linear-gradient(135deg,#f8fafc 0,#e0e7ef 100%);">
+                                <div class="d-flex align-items-center mb-3 gap-2">
+                                    <span class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle analytics-header-icon"><i class="fa fa-th"></i></span>
+                                    <h6 class="mb-0 fw-semibold">Sales Heatmap (Day/Hour)</h6>
+                                    <span class="badge bg-dark ms-2">Heatmap</span>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="salesHeatmapChart" height="120"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advanced Analytics Additions End -->
+
+
         </div>
+
 
 
 
@@ -1312,10 +1425,18 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+       <!-- Bootstrap 5.3.3 JS Bundle -->
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
     <script src="assets/js/main.js"></script>
     <script src="assets/js/analytics.js"></script>
-    
+
+
+
 </body>
 
 </html>
