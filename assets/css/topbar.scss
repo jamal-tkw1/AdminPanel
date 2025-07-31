@@ -1,3 +1,60 @@
+// Set search-desktop width to 50% for screens <880px
+@media (max-width: 879px) {
+  .search-desktop {
+    width: 40% !important;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .search-desktop .input-group {
+    width: 100%;
+  }
+}
+/* Custom breakpoint for search bar visibility (650px) */
+.search-desktop {
+  display: flex !important;
+}
+.quick-search-mobile {
+  display: none !important;
+}
+@media (max-width: 650px) {
+  .search-desktop {
+    display: none !important;
+  }
+  .quick-search-mobile {
+    display: inline-flex !important;
+  }
+}
+@media (min-width: 651px) {
+  .search-desktop {
+    display: flex !important;
+  }
+  .quick-search-mobile {
+    display: none !important;
+  }
+}
+/* Responsive width for mobile search offcanvas */
+@media (max-width: 576px) {
+  #mobileSearchOffcanvas.offcanvas-top {
+    width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+  #mobileSearchOffcanvas .input-group {
+    max-width: 98vw;
+  }
+}
+@media (min-width: 577px) {
+  #mobileSearchOffcanvas.offcanvas-top {
+    width: 420px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    border-radius: var(--border-radius);
+  }
+  #mobileSearchOffcanvas .input-group {
+    max-width: 400px;
+  }
+}
 /* Mobile search offcanvas height and centering fix */
 #mobileSearchOffcanvas.offcanvas-top {
   height: 120px !important;

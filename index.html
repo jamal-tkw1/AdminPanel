@@ -26,70 +26,77 @@
 <body data-bs-theme="light">
     <!-- App Settings Offcanvas -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="appSettingsPanel" aria-labelledby="appSettingsPanelLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="appSettingsPanelLabel"><i class="fa-solid fa-gear me-2"></i>App Settings</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="mb-4">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="toggleHorizontalMenu" checked>
-            <label class="form-check-label fw-semibold" for="toggleHorizontalMenu">Enable Horizontal Menu</label>
-          </div>
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="appSettingsPanelLabel"><i class="fa-solid fa-gear me-2"></i>App Settings
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="mb-4">
-          <label class="form-label fw-semibold">Breadcrumb Position</label>
-          <div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="breadcrumbPosition" id="breadcrumbBefore" value="before">
-              <label class="form-check-label" for="breadcrumbBefore">Before Horizontal Menu</label>
+        <div class="offcanvas-body">
+            <div class="mb-4">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="toggleHorizontalMenu" checked>
+                    <label class="form-check-label fw-semibold" for="toggleHorizontalMenu">Enable Horizontal
+                        Menu</label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="breadcrumbPosition" id="breadcrumbAfter" value="after">
-              <label class="form-check-label" for="breadcrumbAfter">After Horizontal Menu</label>
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Breadcrumb Position</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="breadcrumbPosition" id="breadcrumbBefore"
+                            value="before">
+                        <label class="form-check-label" for="breadcrumbBefore">Before Horizontal Menu</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="breadcrumbPosition" id="breadcrumbAfter"
+                            value="after">
+                        <label class="form-check-label" for="breadcrumbAfter">After Horizontal Menu</label>
+                    </div>
+                </div>
             </div>
-          </div>
+            <hr>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Other Settings</label>
+                <div class="form-text">More app-wide settings can be added here.</div>
+                <!-- Add more controls as needed -->
+            </div>
         </div>
-        <hr>
-        <div class="mb-3">
-          <label class="form-label fw-semibold">Other Settings</label>
-          <div class="form-text">More app-wide settings can be added here.</div>
-          <!-- Add more controls as needed -->
-        </div>
-      </div>
     </div>
     <!-- Mega Menu Settings Offcanvas -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="megaMenuSettings" aria-labelledby="megaMenuSettingsLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="megaMenuSettingsLabel"><i class="fa-solid fa-cubes me-2"></i>Mega Menu Settings</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="mb-3">
-          <label class="form-label fw-semibold">Alignment</label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="megaMenuAlign" id="megaMenuLeft" value="left" checked>
-            <label class="form-check-label" for="megaMenuLeft">Left-aligned (default)</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="megaMenuAlign" id="megaMenuCenter" value="center">
-            <label class="form-check-label" for="megaMenuCenter">Centered</label>
-          </div>
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="megaMenuSettingsLabel"><i class="fa-solid fa-cubes me-2"></i>Mega Menu
+                Settings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="mb-3">
-          <label class="form-label fw-semibold">Width</label>
-          <select class="form-select" id="megaMenuWidth">
-            <option value="600">600px (default)</option>
-            <option value="900">900px</option>
-            <option value="full">Full Width</option>
-          </select>
+        <div class="offcanvas-body">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Alignment</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="megaMenuAlign" id="megaMenuLeft" value="left"
+                        checked>
+                    <label class="form-check-label" for="megaMenuLeft">Left-aligned (default)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="megaMenuAlign" id="megaMenuCenter"
+                        value="center">
+                    <label class="form-check-label" for="megaMenuCenter">Centered</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Width</label>
+                <select class="form-select" id="megaMenuWidth">
+                    <option value="600">600px (default)</option>
+                    <option value="900">900px</option>
+                    <option value="full">Full Width</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Vertical Offset</label>
+                <input type="number" class="form-control" id="megaMenuOffset" min="0" max="100" value="0" step="1">
+                <div class="form-text">Offset from top in px (default: 0)</div>
+            </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label fw-semibold">Vertical Offset</label>
-          <input type="number" class="form-control" id="megaMenuOffset" min="0" max="100" value="0" step="1">
-          <div class="form-text">Offset from top in px (default: 0)</div>
-        </div>
-      </div>
     </div>
 
     <div class="wrapper">
@@ -101,7 +108,8 @@
 
             <ul class="sidebar-menu">
                 <li class="menu-header">Main</li>
-                <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i><span class="menu-text">Dashboard</span></a></li>
+                <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i><span
+                            class="menu-text">Dashboard</span></a></li>
                 <li><a href="#"><i class="fas fa-chart-bar"></i><span class="menu-text">Analytics</span></a></li>
                 <li><a href="#"><i class="fas fa-bolt"></i><span class="menu-text">Activity</span></a></li>
                 <li><a href="#"><i class="fas fa-calendar-alt"></i><span class="menu-text">Calendar</span></a></li>
@@ -114,7 +122,8 @@
                 <li class="menu-header">Interface</li>
                 <li>
                     <a href="#componentsSubmenu" data-bs-toggle="collapse" aria-expanded="false"
-                        class="dropdown-toggle"><i class="fas fa-puzzle-piece"></i><span class="menu-text">Components</span></a>
+                        class="dropdown-toggle"><i class="fas fa-puzzle-piece"></i><span
+                            class="menu-text">Components</span></a>
                     <ul class="collapse list-unstyled sidebar-submenu" id="componentsSubmenu">
                         <li><a href="#">Alerts</a></li>
                         <li><a href="#">Buttons</a></li>
@@ -173,7 +182,8 @@
                                 <li><a href="#">Item 1</a></li>
                                 <li><a href="#">Item 2</a></li>
                                 <li>
-                                    <a href="#level3Submenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Level 3 Menu</a>
+                                    <a href="#level3Submenu" data-bs-toggle="collapse" aria-expanded="false"
+                                        class="dropdown-toggle">Level 3 Menu</a>
                                     <ul class="collapse list-unstyled sidebar-submenu" id="level3Submenu">
                                         <li><a href="#">Subitem 1</a></li>
                                         <li><a href="#">Subitem 2</a></li>
@@ -184,8 +194,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#errorPagesSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
-                            class="fas fa-exclamation-triangle"></i><span class="menu-text">Error Pages</span></a>
+                    <a href="#errorPagesSubmenu" data-bs-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle"><i class="fas fa-exclamation-triangle"></i><span class="menu-text">Error
+                            Pages</span></a>
                     <ul class="collapse list-unstyled sidebar-submenu" id="errorPagesSubmenu">
                         <li><a href="#">404</a></li>
                         <li><a href="#">500</a></li>
@@ -198,7 +209,8 @@
                 <li><a href="#"><i class="fas fa-history"></i><span class="menu-text">Recent</span></a></li>
                 <li><a href="#"><i class="fas fa-rocket"></i><span class="menu-text">Launchpad</span></a></li>
                 <li><a href="#"><i class="fas fa-lightbulb"></i><span class="menu-text">Tips & Tricks</span></a></li>
-                <li><a href="#"><i class="fas fa-question-circle"></i><span class="menu-text">Help Center</span></a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i><span class="menu-text">Help Center</span></a>
+                </li>
                 <li><a href="#"><i class="fas fa-info-circle"></i><span class="menu-text">About</span></a></li>
             </ul>
         </nav>
@@ -207,393 +219,460 @@
         <div id="content" class="modern-content">
             <!-- Top Bar -->
             <div id="content-relative-wrapper" style="position:relative;">
-            <nav class="navbar navbar-expand-lg top-navbar">
-                <div class="container-fluid">
-                    <!-- Left Side: Toggle & Brand -->
-                    <div class="d-flex align-items-center">
-                        <button type="button" id="sidebarCollapse" class="btn btn-light sidebar-toggle me-3">
-                            <i class="fas fa-align-left"></i>
-                        </button>
-                        <a class="navbar-brand d-md-flex align-items-center" href="#">
-                            <i class="fa-solid fa-rocket fs-4 me-2" style="color: var(--primary-color);"></i>
-                            <h5 class="mb-0">Aura Pro</h5>
-                        </a>
-                    </div>
-
-                    <!-- Right Side: Search, Icons, User -->
-                    <div class="d-flex align-items-center ms-auto position-relative">
-                        <!-- Search Bar (desktop) -->
-                        <form class="d-none d-md-flex me-3 search-form" role="search">
-                            <div class="input-group">
-                                <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
-                                <button class="btn btn-outline-secondary" type="submit" style="border-color: var(--border-color); color: var(--text-color);"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            </div>
-                        </form>
-                        <!-- Quick Search Icon (mobile) -->
-                        <button class="btn btn-link d-md-none me-2" type="button" title="Quick Search" style="color: var(--text-color); font-size: 1.2rem;" data-bs-toggle="offcanvas" data-bs-target="#mobileSearchOffcanvas" aria-controls="mobileSearchOffcanvas">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-    <!-- Mobile Search Offcanvas (moved outside navbar for correct overlay) -->
-    <div class="offcanvas offcanvas-top" tabindex="-1" id="mobileSearchOffcanvas" aria-labelledby="mobileSearchOffcanvasLabel" style="height: 80px;">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="mobileSearchOffcanvasLabel"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body pt-0">
-        <form class="search-form w-100" role="search">
-          <div class="input-group">
-            <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
-            <button class="btn btn-outline-secondary" type="submit" style="border-color: var(--border-color); color: var(--text-color);"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-                        <!-- Icons Nav -->
-                        <ul class="navbar-nav flex-row align-items-center">
-                            <!-- Theme Switcher -->
-                            <li class="nav-item d-flex align-items-center me-3">
-                                <div class="dark-mode-toggle" id="darkModeToggle" title="Toggle Theme">
-                                    <i class="fa-solid fa-moon fs-5" id="themeIcon"></i>
-                                </div>
-                            </li>
-
-                            <!-- Settings Shortcut -->
-                            <li class="nav-item d-flex align-items-center me-3">
-                                <a class="nav-link" href="#" id="openAppSettings" title="App Settings (S)">
-                                    <i class="fa-solid fa-gear fs-5"></i>
-                                </a>
-                            </li>
-                            <!-- Notifications Dropdown -->
-                            <li class="nav-item dropdown me-3">
-                                <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false" title="Notifications (N)">
-                                    <i class="fa-solid fa-bell fs-5 notify-animate" id="notifBell"></i>
-                                    <span
-                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                        style="font-size: 0.6em; padding: 0.3em 0.5em;">3+</span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li class="dropdown-header">3 New Notifications</li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <!-- Example notification items (keep as before) -->
-                                    <li><a class="dropdown-item" href="#"><img
-                                                src="https://randomuser.me/api/portraits/men/32.jpg"
-                                                class="notif-avatar-img me-2" alt="User"> <span
-                                                class="msg-content"><span class="msg-title">New user
-                                                    registered</span><span class="msg-snippet">Welcome Alex
-                                                    Johnson!</span></span></a></li>
-
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="fa-solid fa-server text-warning"></i> <span
-                                                class="msg-content"><span class="msg-title">Server rebooted</span><span
-                                                    class="msg-snippet">Maintenance completed</span></span></a></li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="fa-solid fa-file-invoice-dollar text-primary"></i> <span
-                                                class="msg-content"><span class="msg-title">New invoice
-                                                    generated</span><span class="msg-snippet">Invoice
-                                                    #12345</span></span></a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <!-- Empty state example (hidden by default, show if no notifications) -->
-                                    <li class="dropdown-item text-center d-none" id="notif-empty">
-                                        <div style="padding: 1rem 0;">
-                                            <i class="fa-regular fa-bell-slash fa-2x mb-2 text-secondary"></i><br>
-                                            <span class="small text-muted">No new notifications</span>
-                                        </div>
-                                    </li>
-                                    <li><a class="dropdown-item text-center" href="#">View all notifications</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Messages Dropdown -->
-                            <li class="nav-item dropdown me-3">
-                                <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false" title="Messages">
-                                    <i class="fa-solid fa-envelope fs-5"></i>
-                                    <span
-                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
-                                        style="font-size: 0.6em; padding: 0.3em 0.5em;">1</span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li class="dropdown-header">1 New Message</li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <!-- Example message item (keep as before) -->
-                                    <li><a class="dropdown-item" href="#">
-                                            <img src="https://randomuser.me/api/portraits/women/44.jpg"
-                                                class="msg-avatar-img me-2" alt="User">
-                                            <span class="msg-content">
-                                                <span class="msg-title">Alex Johnson</span>
-                                                <span class="msg-snippet">Sent you a message...</span>
-                                            </span>
-                                        </a></li>
-
-
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <!-- Empty state example (hidden by default, show if no messages) -->
-                                    <li class="dropdown-item text-center d-none" id="msg-empty">
-                                        <div style="padding: 1rem 0;">
-                                            <i class="fa-regular fa-envelope-open fa-2x mb-2 text-secondary"></i><br>
-                                            <span class="small text-muted">No new messages</span>
-                                        </div>
-                                    </li>
-                                    <li><a class="dropdown-item text-center" href="#">View all messages</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- User Profile Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle d-flex align-items-center position-relative" href="#"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Account (A)">
-                                    <span style="position:relative;display:inline-block;">
-                                        <img src="https://placehold.co/40x40/4A69FF/FFFFFF?text=JD"
-                                            class="rounded-circle me-2" alt="User Avatar"
-                                            style="width: 32px; height: 32px;">
-                                        <span class="user-avatar-badge"></span>
-                                    </span>
-                                    <span class="d-none d-sm-inline">John Doe</span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li class="dropdown-header text-center">
-                                        <span style="display:inline-block; position:relative;">
-                                            <img src="https://placehold.co/80x80/4A69FF/FFFFFF?text=JD"
-                                                class="dropdown-avatar-img" alt="User Avatar">
-                                        </span>
-                                        <div style="font-size:1.08rem; font-weight:600; color:var(--heading-color);">
-                                            John Doe</div>
-                                        <div style="font-size:0.92rem; color:var(--text-color); opacity:0.7;">
-                                            Administrator</div>
-                                    </li>
-
-
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>Profile</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>Settings</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-list-check"></i>My
-                                            Tasks</a></li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="fa-solid fa-clock-rotate-left"></i>Activity Log</a></li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="fa-solid fa-circle-question"></i>Help</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item text-danger fw-semibold" href="#"><i
-                                                class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-           
-
-
-            <!-- Breadcrumb Navigation (moved by JS) -->
-            <nav id="breadcrumbNav" aria-label="breadcrumb" class="pt-2 pb-2 ps-2 pe-2">
-              <ol class="breadcrumb mb-0" style="background: var(--card-bg, #fff); border-radius: 0.5rem;">
-                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home me-1"></i> Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-              </ol>
-            </nav>
-
-            <!-- Horizontal Navigation with Mega Menu -->
-            <nav class="navbar navbar-expand-lg horizontal-nav" id="horizontalNavBar">
-                <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav align-items-center gap-1">
-                            <li class="nav-item">
-                                <a class="nav-link active d-flex align-items-center" href="#">
-                                    <i class="fa-solid fa-gauge-high me-1"></i> Dashboard
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-chart-line me-1"></i> Analytics
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-chart-pie me-2"></i>Sales Report</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-group me-2"></i>User Report</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bullseye me-2"></i>Goals</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-flag-checkered me-2"></i>Performance</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-layer-group me-1"></i> Apps
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-envelope me-2"></i>Email</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-calendar-days me-2"></i>Calendar</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-comments me-2"></i>Chat</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-clipboard-list me-2"></i>Tasks</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown position-static" id="megaMenuParent">
-                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-cubes me-1"></i> Mega Menu
-                                </a>
-                                <div class="dropdown-menu mega-menu p-4" id="megaMenuDropdown" style="min-width: 600px;">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <h6 class="text-uppercase fw-bold mb-2"><i class="fa-solid fa-puzzle-piece me-1"></i> UI Components</h6>
-                                            <ul class="list-unstyled mb-0">
-                                                <li><a href="#"><i class="fa-solid fa-table-cells-large me-2"></i>Grids & Layouts</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-toggle-on me-2"></i>Switches</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-pen-nib me-2"></i>Typography</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-badge-check me-2"></i>Badges</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h6 class="text-uppercase fw-bold mb-2"><i class="fa-solid fa-gears me-1"></i> Utilities</h6>
-                                            <ul class="list-unstyled mb-0">
-                                                <li><a href="#"><i class="fa-solid fa-border-all me-2"></i>Spacing</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-paint-roller me-2"></i>Colors</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-eye-dropper me-2"></i>Theme Customizer</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-code-branch me-2"></i>Version Control</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h6 class="text-uppercase fw-bold mb-2"><i class="fa-solid fa-link me-1"></i> Quick Links</h6>
-                                            <ul class="list-unstyled mb-0">
-                                                <li><a href="#"><i class="fa-solid fa-gear me-2"></i>Settings</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-life-ring me-2"></i>Support Center</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-book me-2"></i>Documentation</a></li>
-                                                <li><a href="#"><i class="fa-solid fa-rocket me-2"></i>Upgrade</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-sm btn-outline-secondary mt-3 float-end" id="openMegaMenuSettings"><i class="fa-solid fa-sliders me-1"></i>Settings</button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center" href="#"><i class="fa-solid fa-users me-1"></i> Teams</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center" href="#"><i class="fa-solid fa-briefcase me-1"></i> Projects</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center" href="#"><i class="fa-solid fa-file-lines me-1"></i> Docs</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Page Content -->
-            <main class="main-content p-4">
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- Stat Cards -->
-                        <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.1s;">
-                            <div class="card">
-                                <div class="card-body">... Sales ...</div>
-                            </div>
+                <nav class="navbar navbar-expand-lg top-navbar">
+                    <div class="container-fluid">
+                        <!-- Left Side: Toggle & Brand -->
+                        <div class="d-flex align-items-center">
+                            <button type="button" id="sidebarCollapse" class="btn btn-light sidebar-toggle me-3">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                            <a class="navbar-brand d-sm-flex align-items-center" href="#">
+                                <i class="fa-solid fa-rocket fs-4 me-2" style="color: var(--primary-color);"></i>
+                                <h5 class="mb-0">Aura Pro</h5>
+                            </a>
                         </div>
-                        <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.2s;">
-                            <div class="card">
-                                <div class="card-body">... Revenue ...</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.3s;">
-                            <div class="card">
-                                <div class="card-body">... Users ...</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.4s;">
-                            <div class="card">
-                                <div class="card-body">... Growth ...</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card fade-in-up" style="animation-delay: 0.5s;">
-                                <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h5 class="card-title mb-0">Main Content Area</h5>
-                                    <!-- AI Assistant Button -->
-                                    <button class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#aiAssistantModal">
-                                        <i class="fa-solid fa-wand-magic-sparkles me-2"></i> ✨ AI Assistant
+
+                        <!-- Right Side: Search, Icons, User -->
+                        <div class="d-flex align-items-center ms-auto position-relative">
+                            <!-- Search Bar (desktop, >650px) -->
+                            <form class="search-form me-3 search-desktop" role="search">
+                                <div class="input-group">
+                                    <input class="form-control" type="search" placeholder="Search..."
+                                        aria-label="Search">
+                                    <button class="btn btn-outline-secondary" type="submit"
+                                        style="border-color: var(--border-color); color: var(--text-color);">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
                                 </div>
-                                <div class="card-body">
-                                    <p>Welcome to Aura Pro! This template is built for premium performance and
-                                        aesthetics.</p>
-                                    <ul>
-                                        <li><strong>Glassmorphism:</strong> Notice the frosted glass effect on the cards
-                                            and navigation bars.</li>
-                                        <li><strong>Animations:</strong> Content fades in smoothly for a dynamic feel.
+                            </form>
+                            <!-- Quick Search Icon (mobile, <=650px) -->
+                            <button class="btn btn-link quick-search-mobile me-2" type="button" title="Quick Search"
+                                style="color: var(--text-color); font-size: 1.2rem;" data-bs-toggle="offcanvas"
+                                data-bs-target="#mobileSearchOffcanvas" aria-controls="mobileSearchOffcanvas">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <!-- Mobile Search Offcanvas (mobile only) -->
+                            <div class="offcanvas offcanvas-top quick-search-mobile" tabindex="-1"
+                                id="mobileSearchOffcanvas" aria-labelledby="mobileSearchOffcanvasLabel"
+                                style="height: 80px;">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="mobileSearchOffcanvasLabel"><i
+                                            class="fa-solid fa-magnifying-glass me-2"></i>Search</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body pt-0">
+                                    <form class="search-form w-100" role="search">
+                                        <div class="input-group">
+                                            <input class="form-control" type="search" placeholder="Search..."
+                                                aria-label="Search">
+                                            <button class="btn btn-outline-secondary" type="submit"
+                                                style="border-color: var(--border-color); color: var(--text-color);"><i
+                                                    class="fa-solid fa-magnifying-glass"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Icons Nav -->
+                            <ul class="navbar-nav flex-row align-items-center">
+                                <!-- Theme Switcher -->
+                                <li class="nav-item d-flex align-items-center me-3 dnon">
+                                    <div class="dark-mode-toggle" id="darkModeToggle" title="Toggle Theme">
+                                        <i class="fa-solid fa-moon fs-5" id="themeIcon"></i>
+                                    </div>
+                                </li>
+
+                                <!-- Settings Shortcut -->
+                                <li class="nav-item d-flex align-items-center me-3 d-none">
+                                    <a class="nav-link" href="#" id="openAppSettings" title="App Settings (S)">
+                                        <i class="fa-solid fa-gear fs-5"></i>
+                                    </a>
+                                </li>
+                                <!-- Notifications Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a class="nav-link position-relative" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false" title="Notifications (N)">
+                                        <i class="fa-solid fa-bell fs-5 notify-animate" id="notifBell"></i>
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                            style="font-size: 0.6em; padding: 0.3em 0.5em;">3+</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li class="dropdown-header">3 New Notifications</li>
+                                        <li>
+                                            <hr class="dropdown-divider">
                                         </li>
-                                        <li><strong>Dark Mode:</strong> Click the moon icon in the top bar to toggle
-                                            themes.</li>
-                                        <li><strong>Highly Customizable:</strong> Easily change the entire theme by
-                                            editing the CSS variables at the top of the <code>&lt;style&gt;</code> tag.
+                                        <!-- Example notification items (keep as before) -->
+                                        <li><a class="dropdown-item" href="#"><img
+                                                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                                                    class="notif-avatar-img me-2" alt="User"> <span
+                                                    class="msg-content"><span class="msg-title">New user
+                                                        registered</span><span class="msg-snippet">Welcome Alex
+                                                        Johnson!</span></span></a></li>
+
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-server text-warning"></i> <span
+                                                    class="msg-content"><span class="msg-title">Server
+                                                        rebooted</span><span class="msg-snippet">Maintenance
+                                                        completed</span></span></a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-file-invoice-dollar text-primary"></i> <span
+                                                    class="msg-content"><span class="msg-title">New invoice
+                                                        generated</span><span class="msg-snippet">Invoice
+                                                        #12345</span></span></a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
                                         </li>
-                                        <li><strong>✨ AI Assistant:</strong> Click the button in the header to generate
-                                            content using the Gemini API.</li>
+                                        <!-- Empty state example (hidden by default, show if no notifications) -->
+                                        <li class="dropdown-item text-center d-none" id="notif-empty">
+                                            <div style="padding: 1rem 0;">
+                                                <i class="fa-regular fa-bell-slash fa-2x mb-2 text-secondary"></i><br>
+                                                <span class="small text-muted">No new notifications</span>
+                                            </div>
+                                        </li>
+                                        <li><a class="dropdown-item text-center" href="#">View all notifications</a>
+                                        </li>
                                     </ul>
+                                </li>
+
+                                <!-- Messages Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a class="nav-link position-relative" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false" title="Messages">
+                                        <i class="fa-solid fa-envelope fs-5"></i>
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                                            style="font-size: 0.6em; padding: 0.3em 0.5em;">1</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li class="dropdown-header">1 New Message</li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <!-- Example message item (keep as before) -->
+                                        <li><a class="dropdown-item" href="#">
+                                                <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                                                    class="msg-avatar-img me-2" alt="User">
+                                                <span class="msg-content">
+                                                    <span class="msg-title">Alex Johnson</span>
+                                                    <span class="msg-snippet">Sent you a message...</span>
+                                                </span>
+                                            </a></li>
+
+
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <!-- Empty state example (hidden by default, show if no messages) -->
+                                        <li class="dropdown-item text-center d-none" id="msg-empty">
+                                            <div style="padding: 1rem 0;">
+                                                <i
+                                                    class="fa-regular fa-envelope-open fa-2x mb-2 text-secondary"></i><br>
+                                                <span class="small text-muted">No new messages</span>
+                                            </div>
+                                        </li>
+                                        <li><a class="dropdown-item text-center" href="#">View all messages</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- User Profile Dropdown -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle d-flex align-items-center position-relative"
+                                        href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                        title="Account (A)">
+                                        <span style="position:relative;display:inline-block;">
+                                            <img src="https://placehold.co/40x40/4A69FF/FFFFFF?text=JD"
+                                                class="rounded-circle me-2" alt="User Avatar"
+                                                style="width: 32px; height: 32px;">
+                                            <span class="user-avatar-badge"></span>
+                                        </span>
+                                        <span class="d-none d-sm-inline">John Doe</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li class="dropdown-header text-center">
+                                            <span style="display:inline-block; position:relative;">
+                                                <img src="https://placehold.co/80x80/4A69FF/FFFFFF?text=JD"
+                                                    class="dropdown-avatar-img" alt="User Avatar">
+                                            </span>
+                                            <div
+                                                style="font-size:1.08rem; font-weight:600; color:var(--heading-color);">
+                                                John Doe</div>
+                                            <div style="font-size:0.92rem; color:var(--text-color); opacity:0.7;">
+                                                Administrator</div>
+                                        </li>
+
+
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-user"></i>Profile</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-gear"></i>Settings</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-list-check"></i>My
+                                                Tasks</a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-clock-rotate-left"></i>Activity Log</a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-circle-question"></i>Help</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item text-danger fw-semibold" href="#"><i
+                                                    class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+
+
+                <!-- Breadcrumb Navigation (moved by JS) -->
+                <nav id="breadcrumbNav" aria-label="breadcrumb" class="pt-2 pb-2 ps-2 pe-2" style="background: var(--card-bg, #fff); border-radius: 0.5rem;">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home me-1"></i> Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    </ol>
+                </nav>
+
+                <!-- Horizontal Navigation with Mega Menu -->
+                <nav class="navbar navbar-expand-md horizontal-nav" id="horizontalNavBar">
+                    <div class="container-fluid">
+                        <!-- Modern Hamburger/collapse icon for horizontal nav (only below xl) -->
+                        <button class="navbar-toggler d-xl-none align-items-center justify-content-center float-end"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                            style="padding: 0.7rem 1.1rem; border-radius: 0.7rem; background: rgba(80,120,255,0.08); border: none; box-shadow: 0 2px 8px 0 rgba(80,80,120,0.07);">
+                            <i class="fa-solid fa-bars" style="font-size: 1.35rem; color: var(--primary-color);"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav align-items-center gap-1">
+                                <li class="nav-item">
+                                    <a class="nav-link active d-flex align-items-center" href="#">
+                                        <i class="fa-solid fa-gauge-high me-1"></i> Dashboard
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-chart-line me-1"></i> Analytics
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-chart-pie me-2"></i>Sales Report</a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-user-group me-2"></i>User Report</a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-bullseye me-2"></i>Goals</a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-flag-checkered me-2"></i>Performance</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-layer-group me-1"></i> Apps
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-envelope me-2"></i>Email</a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-calendar-days me-2"></i>Calendar</a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-comments me-2"></i>Chat</a></li>
+                                        <li><a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-clipboard-list me-2"></i>Tasks</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown position-static" id="megaMenuParent">
+                                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-cubes me-1"></i> Mega Menu
+                                    </a>
+                                    <div class="dropdown-menu mega-menu p-4" id="megaMenuDropdown"
+                                        style="min-width: 600px;">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h6 class="text-uppercase fw-bold mb-2"><i
+                                                        class="fa-solid fa-puzzle-piece me-1"></i> UI Components</h6>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li><a href="#"><i
+                                                                class="fa-solid fa-table-cells-large me-2"></i>Grids &
+                                                            Layouts</a></li>
+                                                    <li><a href="#"><i
+                                                                class="fa-solid fa-toggle-on me-2"></i>Switches</a></li>
+                                                    <li><a href="#"><i
+                                                                class="fa-solid fa-pen-nib me-2"></i>Typography</a></li>
+                                                    <li><a href="#"><i
+                                                                class="fa-solid fa-badge-check me-2"></i>Badges</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h6 class="text-uppercase fw-bold mb-2"><i
+                                                        class="fa-solid fa-gears me-1"></i> Utilities</h6>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li><a href="#"><i
+                                                                class="fa-solid fa-border-all me-2"></i>Spacing</a></li>
+                                                    <li><a href="#"><i
+                                                                class="fa-solid fa-paint-roller me-2"></i>Colors</a>
+                                                    </li>
+                                                    <li><a href="#"><i class="fa-solid fa-eye-dropper me-2"></i>Theme
+                                                            Customizer</a></li>
+                                                    <li><a href="#"><i class="fa-solid fa-code-branch me-2"></i>Version
+                                                            Control</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h6 class="text-uppercase fw-bold mb-2"><i
+                                                        class="fa-solid fa-link me-1"></i> Quick Links</h6>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li><a href="#"><i class="fa-solid fa-gear me-2"></i>Settings</a>
+                                                    </li>
+                                                    <li><a href="#"><i class="fa-solid fa-life-ring me-2"></i>Support
+                                                            Center</a></li>
+                                                    <li><a href="#"><i
+                                                                class="fa-solid fa-book me-2"></i>Documentation</a></li>
+                                                    <li><a href="#"><i class="fa-solid fa-rocket me-2"></i>Upgrade</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary mt-3 float-end"
+                                            id="openMegaMenuSettings"><i
+                                                class="fa-solid fa-sliders me-1"></i>Settings</button>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" href="#"><i
+                                            class="fa-solid fa-users me-1"></i> Teams</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" href="#"><i
+                                            class="fa-solid fa-briefcase me-1"></i> Projects</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" href="#"><i
+                                            class="fa-solid fa-file-lines me-1"></i> Docs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Page Content -->
+                <main class="main-content p-4">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- Stat Cards -->
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.1s;">
+                                <div class="card">
+                                    <div class="card-body">... Sales ...</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.2s;">
+                                <div class="card">
+                                    <div class="card-body">... Revenue ...</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.3s;">
+                                <div class="card">
+                                    <div class="card-body">... Users ...</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.4s;">
+                                <div class="card">
+                                    <div class="card-body">... Growth ...</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card fade-in-up" style="animation-delay: 0.5s;">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">Main Content Area</h5>
+                                        <!-- AI Assistant Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#aiAssistantModal">
+                                            <i class="fa-solid fa-wand-magic-sparkles me-2"></i> ✨ AI Assistant
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Welcome to Aura Pro! This template is built for premium performance and
+                                            aesthetics.</p>
+                                        <ul>
+                                            <li><strong>Glassmorphism:</strong> Notice the frosted glass effect on the
+                                                cards
+                                                and navigation bars.</li>
+                                            <li><strong>Animations:</strong> Content fades in smoothly for a dynamic
+                                                feel.
+                                            </li>
+                                            <li><strong>Dark Mode:</strong> Click the moon icon in the top bar to toggle
+                                                themes.</li>
+                                            <li><strong>Highly Customizable:</strong> Easily change the entire theme by
+                                                editing the CSS variables at the top of the <code>&lt;style&gt;</code>
+                                                tag.
+                                            </li>
+                                            <li><strong>✨ AI Assistant:</strong> Click the button in the header to
+                                                generate
+                                                content using the Gemini API.</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
-    </div>
 
-    <!-- AI Assistant Modal -->
-    <div class="modal fade" id="aiAssistantModal" tabindex="-1" aria-labelledby="aiAssistantModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content"
-                style="background-color: var(--card-bg); backdrop-filter: blur(var(--glass-blur));">
-                <div class="modal-header" style="border-bottom-color: var(--border-color);">
-                    <h5 class="modal-title" id="aiAssistantModalLabel" style="color: var(--heading-color);"><i
-                            class="fa-solid fa-wand-magic-sparkles me-2"></i>AI Content Assistant</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="aiPrompt" class="form-label" style="color: var(--text-color);">Enter your
-                            prompt:</label>
-                        <textarea class="form-control" id="aiPrompt" rows="3"
-                            placeholder="e.g., Write a short welcome email for a new user signing up for our service."></textarea>
+        <!-- AI Assistant Modal -->
+        <div class="modal fade" id="aiAssistantModal" tabindex="-1" aria-labelledby="aiAssistantModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content"
+                    style="background-color: var(--card-bg); backdrop-filter: blur(var(--glass-blur));">
+                    <div class="modal-header" style="border-bottom-color: var(--border-color);">
+                        <h5 class="modal-title" id="aiAssistantModalLabel" style="color: var(--heading-color);"><i
+                                class="fa-solid fa-wand-magic-sparkles me-2"></i>AI Content Assistant</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <button class="btn btn-primary" id="generateContentBtn">
-                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-                        Generate Content
-                    </button>
-                    <hr style="border-color: var(--border-color); margin: 1.5rem 0;">
-                    <h6 style="color: var(--heading-color);">Generated Content:</h6>
-                    <div id="aiResult"
-                        style="color: var(--text-color); min-height: 100px; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1rem; background-color: rgba(128, 128, 128, 0.1);">
-                        Your generated content will appear here...
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="aiPrompt" class="form-label" style="color: var(--text-color);">Enter your
+                                prompt:</label>
+                            <textarea class="form-control" id="aiPrompt" rows="3"
+                                placeholder="e.g., Write a short welcome email for a new user signing up for our service."></textarea>
+                        </div>
+                        <button class="btn btn-primary" id="generateContentBtn">
+                            <span class="spinner-border spinner-border-sm d-none" role="status"
+                                aria-hidden="true"></span>
+                            Generate Content
+                        </button>
+                        <hr style="border-color: var(--border-color); margin: 1.5rem 0;">
+                        <h6 style="color: var(--heading-color);">Generated Content:</h6>
+                        <div id="aiResult"
+                            style="color: var(--text-color); min-height: 100px; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1rem; background-color: rgba(128, 128, 128, 0.1);">
+                            Your generated content will appear here...
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- Bootstrap 5.3.3 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        <!-- Bootstrap 5.3.3 JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+        <!-- Main JS -->
+        <script src="assets/js/main.js"></script>
 </body>
+
 </html>
