@@ -430,11 +430,9 @@
                     </div>
                 </nav>
 
-
-
-
                 <!-- Breadcrumb Navigation (moved by JS) -->
-                <nav id="breadcrumbNav" aria-label="breadcrumb" class="pt-2 pb-2 ps-2 pe-2" style="background: var(--card-bg, #fff); border-radius: 0.5rem;">
+                <nav id="breadcrumbNav" aria-label="breadcrumb" class="pt-2 pb-2 ps-2 pe-2"
+                    style="background: var(--card-bg, #fff); border-radius: 0.5rem;">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item"><a href="#"><i class="fa fa-home me-1"></i> Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -569,27 +567,301 @@
                 <main class="main-content p-4">
                     <div class="container-fluid">
                         <div class="row">
-                            <!-- Stat Cards -->
+                            <!-- Stat Cards Modernized -->
                             <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.1s;">
-                                <div class="card">
-                                    <div class="card-body">... Sales ...</div>
+                                <div class="card stat-card-modern shadow-lg border-0">
+                                    <div class="card-body d-flex align-items-center gap-3 p-4">
+                                        <div class="stat-icon sales flex-shrink-0 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-chart-line fa-lg text-white"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-label text-uppercase text-muted fw-semibold small mb-1">Sales</div>
+                                            <div class="stat-value fw-bold fs-3">$12,400</div>
+                                            <div class="stat-trend text-success small"><i class="fa-solid fa-arrow-up me-1"></i>+8% this week</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.2s;">
-                                <div class="card">
-                                    <div class="card-body">... Revenue ...</div>
+                                <div class="card stat-card-modern shadow-lg border-0">
+                                    <div class="card-body d-flex align-items-center gap-3 p-4">
+                                        <div class="stat-icon revenue flex-shrink-0 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-dollar-sign fa-lg text-white"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-label text-uppercase text-muted fw-semibold small mb-1">Revenue</div>
+                                            <div class="stat-value fw-bold fs-3">$28,900</div>
+                                            <div class="stat-trend text-success small"><i class="fa-solid fa-arrow-up me-1"></i>+5% this week</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.3s;">
-                                <div class="card">
-                                    <div class="card-body">... Users ...</div>
+                                <div class="card stat-card-modern shadow-lg border-0">
+                                    <div class="card-body d-flex align-items-center gap-3 p-4">
+                                        <div class="stat-icon users flex-shrink-0 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-users fa-lg text-white"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-label text-uppercase text-muted fw-semibold small mb-1">Users</div>
+                                            <div class="stat-value fw-bold fs-3">1,245</div>
+                                            <div class="stat-trend text-danger small"><i class="fa-solid fa-arrow-down me-1"></i>-2% this week</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.4s;">
-                                <div class="card">
-                                    <div class="card-body">... Growth ...</div>
+                                <div class="card stat-card-modern shadow-lg border-0">
+                                    <div class="card-body d-flex align-items-center gap-3 p-4">
+                                        <div class="stat-icon growth flex-shrink-0 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-chart-area fa-lg text-white"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-label text-uppercase text-muted fw-semibold small mb-1">Growth</div>
+                                            <div class="stat-value fw-bold fs-3">+3.2%</div>
+                                            <div class="stat-trend text-success small"><i class="fa-solid fa-arrow-up me-1"></i>Steady</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Flat Design Stat Cards -->
+                        <div class="row">
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.1s;">
+                                <div class="card stat-card-flat border-0 shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-flat-icon bg-primary text-white d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-bolt fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-flat-label text-uppercase fw-semibold small mb-1">Active Sessions</div>
+                                            <div class="stat-flat-value fw-bold fs-4">342</div>
+                                            <div class="stat-flat-desc text-muted small">Now</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.2s;">
+                                <div class="card stat-card-flat border-0 shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-flat-icon bg-success text-white d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-check-circle fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-flat-label text-uppercase fw-semibold small mb-1">Tasks Done</div>
+                                            <div class="stat-flat-value fw-bold fs-4">1,024</div>
+                                            <div class="stat-flat-desc text-muted small">Today</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.3s;">
+                                <div class="card stat-card-flat border-0 shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-flat-icon bg-warning text-white d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-exclamation-triangle fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-flat-label text-uppercase fw-semibold small mb-1">Alerts</div>
+                                            <div class="stat-flat-value fw-bold fs-4">7</div>
+                                            <div class="stat-flat-desc text-muted small">Unresolved</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.4s;">
+                                <div class="card stat-card-flat border-0 shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-flat-icon bg-danger text-white d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-bug fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-flat-label text-uppercase fw-semibold small mb-1">Errors</div>
+                                            <div class="stat-flat-value fw-bold fs-4">2</div>
+                                            <div class="stat-flat-desc text-muted small">Critical</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More Flat Design Stat Cards -->
+                        <div class="row">
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.1s;">
+                                <div class="card stat-card-flat border-0 shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-flat-icon bg-info text-white d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-user-plus fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-flat-label text-uppercase fw-semibold small mb-1">New Signups</div>
+                                            <div class="stat-flat-value fw-bold fs-4">58</div>
+                                            <div class="stat-flat-desc text-muted small">Today</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.2s;">
+                                <div class="card stat-card-flat border-0 shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-flat-icon bg-secondary text-white d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-database fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-flat-label text-uppercase fw-semibold small mb-1">DB Queries</div>
+                                            <div class="stat-flat-value fw-bold fs-4">12,340</div>
+                                            <div class="stat-flat-desc text-muted small">Last hour</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.3s;">
+                                <div class="card stat-card-flat border-0 shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-flat-icon bg-dark text-white d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-moon fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-flat-label text-uppercase fw-semibold small mb-1">Night Mode Users</div>
+                                            <div class="stat-flat-value fw-bold fs-4">211</div>
+                                            <div class="stat-flat-desc text-muted small">Current</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.4s;">
+                                <div class="card stat-card-flat border-0 shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-flat-icon bg-teal text-white d-flex align-items-center justify-content-center" style="background-color: #20c997 !important;">
+                                            <i class="fa-solid fa-globe fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-flat-label text-uppercase fw-semibold small mb-1">Countries</div>
+                                            <div class="stat-flat-value fw-bold fs-4">17</div>
+                                            <div class="stat-flat-desc text-muted small">Active</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Minimalist Outline Stat Cards -->
+                        <div class="row">
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.1s;">
+                                <div class="card stat-card-outline border-primary">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-outline-icon text-primary d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-clock fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-outline-label text-uppercase fw-semibold small mb-1">Avg. Response</div>
+                                            <div class="stat-outline-value fw-bold fs-4">1.2s</div>
+                                            <div class="stat-outline-desc text-muted small">Last 24h</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.2s;">
+                                <div class="card stat-card-outline border-success">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-outline-icon text-success d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-leaf fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-outline-label text-uppercase fw-semibold small mb-1">Eco Score</div>
+                                            <div class="stat-outline-value fw-bold fs-4">92</div>
+                                            <div class="stat-outline-desc text-muted small">This month</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.3s;">
+                                <div class="card stat-card-outline border-warning">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-outline-icon text-warning d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-lightbulb fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-outline-label text-uppercase fw-semibold small mb-1">Ideas</div>
+                                            <div class="stat-outline-value fw-bold fs-4">37</div>
+                                            <div class="stat-outline-desc text-muted small">Submitted</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.4s;">
+                                <div class="card stat-card-outline border-danger">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-outline-icon text-danger d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-fire fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-outline-label text-uppercase fw-semibold small mb-1">Incidents</div>
+                                            <div class="stat-outline-value fw-bold fs-4">4</div>
+                                            <div class="stat-outline-desc text-muted small">This week</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Full Flat Stat Cards (No Rounded Corners) -->
+                        <div class="row">
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.1s;">
+                                <div class="card stat-card-fullflat bg-primary text-white border-0">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-fullflat-icon bg-white text-primary d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-chart-bar fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-fullflat-label text-uppercase fw-semibold small mb-1">Views</div>
+                                            <div class="stat-fullflat-value fw-bold fs-4">8,900</div>
+                                            <div class="stat-fullflat-desc text-white-50 small">This week</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.2s;">
+                                <div class="card stat-card-fullflat bg-success text-white border-0">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-fullflat-icon bg-white text-success d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-thumbs-up fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-fullflat-label text-uppercase fw-semibold small mb-1">Likes</div>
+                                            <div class="stat-fullflat-value fw-bold fs-4">1,230</div>
+                                            <div class="stat-fullflat-desc text-white-50 small">Today</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.3s;">
+                                <div class="card stat-card-fullflat bg-warning text-dark border-0">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-fullflat-icon bg-white text-warning d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-star fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-fullflat-label text-uppercase fw-semibold small mb-1">Favorites</div>
+                                            <div class="stat-fullflat-value fw-bold fs-4">312</div>
+                                            <div class="stat-fullflat-desc text-dark-50 small">All time</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3 mb-4 fade-in-up" style="animation-delay: 0.4s;">
+                                <div class="card stat-card-fullflat bg-danger text-white border-0">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="stat-fullflat-icon bg-white text-danger d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-heartbeat fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="stat-fullflat-label text-uppercase fw-semibold small mb-1">Health</div>
+                                            <div class="stat-fullflat-value fw-bold fs-4">Good</div>
+                                            <div class="stat-fullflat-desc text-white-50 small">Status</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
@@ -597,74 +869,24 @@
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                         <h5 class="card-title mb-0">Main Content Area</h5>
                                         <!-- AI Assistant Button -->
-                                        <button class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#aiAssistantModal">
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aiAssistantModal">
                                             <i class="fa-solid fa-wand-magic-sparkles me-2"></i> ✨ AI Assistant
                                         </button>
                                     </div>
                                     <div class="card-body">
-                                        <p>Welcome to Aura Pro! This template is built for premium performance and
-                                            aesthetics.</p>
+                                        <p>Welcome to Aura Pro! This template is built for premium performance and aesthetics.</p>
                                         <ul>
-                                            <li><strong>Glassmorphism:</strong> Notice the frosted glass effect on the
-                                                cards
-                                                and navigation bars.</li>
-                                            <li><strong>Animations:</strong> Content fades in smoothly for a dynamic
-                                                feel.
-                                            </li>
-                                            <li><strong>Dark Mode:</strong> Click the moon icon in the top bar to toggle
-                                                themes.</li>
-                                            <li><strong>Highly Customizable:</strong> Easily change the entire theme by
-                                                editing the CSS variables at the top of the <code>&lt;style&gt;</code>
-                                                tag.
-                                            </li>
-                                            <li><strong>✨ AI Assistant:</strong> Click the button in the header to
-                                                generate
-                                                content using the Gemini API.</li>
+                                            <li><strong>Glassmorphism:</strong> Notice the frosted glass effect on the cards and navigation bars.</li>
+                                            <li><strong>Animations:</strong> Content fades in smoothly for a dynamic feel.</li>
+                                            <li><strong>Dark Mode:</strong> Click the moon icon in the top bar to toggle themes.</li>
+                                            <li><strong>Highly Customizable:</strong> Easily change the entire theme by editing the CSS variables at the top of the <code>&lt;style&gt;</code> tag.</li>
+                                            <li><strong>✨ AI Assistant:</strong> Click the button in the header to generate content using the Gemini API.</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </main>
-            </div>
-        </div>
-
-        <!-- AI Assistant Modal -->
-        <div class="modal fade" id="aiAssistantModal" tabindex="-1" aria-labelledby="aiAssistantModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content"
-                    style="background-color: var(--card-bg); backdrop-filter: blur(var(--glass-blur));">
-                    <div class="modal-header" style="border-bottom-color: var(--border-color);">
-                        <h5 class="modal-title" id="aiAssistantModalLabel" style="color: var(--heading-color);"><i
-                                class="fa-solid fa-wand-magic-sparkles me-2"></i>AI Content Assistant</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="aiPrompt" class="form-label" style="color: var(--text-color);">Enter your
-                                prompt:</label>
-                            <textarea class="form-control" id="aiPrompt" rows="3"
-                                placeholder="e.g., Write a short welcome email for a new user signing up for our service."></textarea>
-                        </div>
-                        <button class="btn btn-primary" id="generateContentBtn">
-                            <span class="spinner-border spinner-border-sm d-none" role="status"
-                                aria-hidden="true"></span>
-                            Generate Content
-                        </button>
-                        <hr style="border-color: var(--border-color); margin: 1.5rem 0;">
-                        <h6 style="color: var(--heading-color);">Generated Content:</h6>
-                        <div id="aiResult"
-                            style="color: var(--text-color); min-height: 100px; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1rem; background-color: rgba(128, 128, 128, 0.1);">
-                            Your generated content will appear here...
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <!-- Bootstrap 5.3.3 JS Bundle -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

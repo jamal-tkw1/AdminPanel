@@ -1,0 +1,323 @@
+// Flat design stat cards for dashboard
+
+.stat-card-flat {
+  background: var(--bs-body-bg);
+  border-radius: 1rem;
+  box-shadow: 0 1px 6px 0 var(--card-shadow, rgba(80,80,120,0.07));
+  transition: box-shadow 0.16s, transform 0.16s;
+  &:hover {
+    box-shadow: 0 4px 18px 0 var(--card-shadow-hover, rgba(80,80,120,0.13));
+    transform: translateY(-2px) scale(1.01);
+  }
+  .card-body {
+    padding: 1.1rem 1.1rem 1.1rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+  }
+}
+
+.stat-flat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 0.7rem;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 6px 0 var(--icon-shadow, rgba(80,80,120,0.10));
+  background: var(--stat-flat-icon-bg, transparent);
+  color: var(--stat-flat-icon-color, inherit);
+}
+
+.stat-flat-label {
+  color: var(--stat-label-color, #6c757d);
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+}
+
+.stat-flat-value {
+  color: var(--stat-value-color, #23272b);
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-bottom: 0.1rem;
+}
+
+.stat-flat-desc {
+  color: var(--stat-desc-color, #adb5bd);
+  font-size: 0.98rem;
+}
+
+// Responsive tweaks for flat cards
+@media (max-width: 991.98px) {
+  .stat-card-flat .card-body {
+    gap: 0.8rem;
+    padding: 0.9rem 0.9rem 0.9rem 0.9rem;
+  }
+  .stat-flat-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .stat-card-flat .card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+  }
+  .stat-flat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  .stat-flat-value {
+    font-size: 1.1rem;
+  }
+}
+// dashboard.scss
+// Additional styles for Stat Cards (glassmorphism, gradients, icons, trends)
+
+
+.stat-card-modern {
+  backdrop-filter: blur(12px);
+  background: var(--bs-body-bg);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px 0 var(--card-shadow, rgba(80,80,120,0.10));
+  border: none;
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+  &:hover {
+    transform: translateY(-4px) scale(1.025);
+    box-shadow: 0 6px 24px 0 var(--card-shadow-hover, rgba(80,80,120,0.16));
+  }
+  .card-body {
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .stat-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 12px 0 var(--icon-shadow, rgba(80,80,120,0.10));
+    background: var(--stat-modern-icon-bg, linear-gradient(135deg, #4A69FF 60%, #8fd3f4 100%));
+    color: var(--stat-modern-icon-color, #fff);
+    &.revenue {
+      background: var(--stat-modern-icon-bg-revenue, linear-gradient(135deg, #FFB347 60%, #ffecd2 100%));
+      color: var(--stat-modern-icon-color-revenue, #fff);
+    }
+    &.users {
+      background: var(--stat-modern-icon-bg-users, linear-gradient(135deg, #43e97b 60%, #38f9d7 100%));
+      color: var(--stat-modern-icon-color-users, #fff);
+    }
+    &.growth {
+      background: var(--stat-modern-icon-bg-growth, linear-gradient(135deg, #f857a6 60%, #ff5858 100%));
+      color: var(--stat-modern-icon-color-growth, #fff);
+    }
+  }
+  .stat-label {
+    text-transform: uppercase;
+    color: var(--stat-label-color, #7b809a);
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.04em;
+  }
+  .stat-value {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--stat-value-color, var(--primary-color, #4A69FF));
+    margin-bottom: 0.1rem;
+  }
+  .stat-trend {
+    font-size: 0.98rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    &.text-success {
+      color: var(--stat-trend-success, #43e97b) !important;
+    }
+    &.text-danger {
+      color: var(--stat-trend-danger, #f857a6) !important;
+    }
+  }
+}
+
+// Animation for fade-in-up
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeInUp 0.7s cubic-bezier(.4,2,.6,1) forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// Responsive tweaks
+@media (max-width: 991.98px) {
+  .stat-card-modern .card-body {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .stat-card-modern .card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .stat-card-modern .stat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+  .stat-card-modern .stat-value {
+    font-size: 1.3rem;
+  }
+}
+
+// Minimalist Outline Stat Cards
+
+.stat-card-outline {
+  background: var(--bs-body-bg);
+  border-width: 2px !important;
+  border-radius: 1rem;
+  box-shadow: none;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  .card-body {
+    padding: 1.25rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  &:hover {
+    box-shadow: 0 4px 24px 0 var(--card-shadow-hover, rgba(80,120,255,0.08));
+    border-color: var(--primary-color, #4A69FF) !important;
+  }
+}
+
+.stat-outline-icon {
+  width: 48px;
+  height: 48px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background: var(--stat-outline-icon-bg, transparent);
+  color: var(--stat-outline-icon-color, currentColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.stat-card-outline:hover .stat-outline-icon {
+  background: currentColor;
+  color: #fff !important;
+  border-color: currentColor;
+}
+
+.stat-outline-label {
+  letter-spacing: 0.04em;
+  color: var(--stat-label-color, #888);
+}
+.stat-outline-value {
+  color: var(--stat-value-color, #222);
+}
+.stat-outline-desc {
+  color: var(--stat-desc-color, #aaa);
+}
+
+// Full Flat Stat Cards (No Rounded Corners)
+.stat-card-fullflat {
+  background: var(--bs-body-bg);
+  border-radius: 0 !important;
+  box-shadow: none;
+  .card-body {
+    padding: 1.25rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+.stat-fullflat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 0 !important;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+.stat-fullflat-label {
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+.stat-fullflat-value {
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-bottom: 0.1rem;
+}
+.stat-fullflat-desc {
+  opacity: 0.7;
+}
+
+// Dark mode overrides for stat cards
+// Remove background override in dark mode, keep color only
+[data-bs-theme="dark"] {
+  .stat-card-flat,
+  .stat-card-modern,
+  .stat-card-outline {
+    color: #fff;
+  }
+  .stat-flat-label,
+  .stat-card-modern .stat-label,
+  .stat-outline-label {
+    color: #e0e0e0 !important;
+  }
+  .stat-flat-value,
+  .stat-card-modern .stat-value,
+  .stat-outline-value {
+    color: #fff !important;
+  }
+  .stat-flat-desc,
+  .stat-card-modern .stat-trend,
+  .stat-outline-desc {
+    color: #b0b0b0 !important;
+  }
+  .stat-flat-icon,
+  .stat-card-modern .stat-icon,
+  .stat-outline-icon {
+    color: #fff !important;
+    background: rgba(255,255,255,0.08) !important;
+  }
+  .stat-card-outline .stat-outline-icon {
+    border-color: #fff !important;
+  }
+  .stat-card-fullflat {
+    color: #fff;
+    background: inherit;
+  }
+  .stat-fullflat-label,
+  .stat-fullflat-value,
+  .stat-fullflat-desc {
+    color: #fff !important;
+    opacity: 0.92;
+  }
+  .stat-fullflat-icon {
+    color: #23272b !important;
+    background: #fff !important;
+  }
+}
