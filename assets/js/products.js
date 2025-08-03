@@ -259,16 +259,16 @@ function renderProducts(page = 1) {
       const card = document.createElement("div");
       card.className = "col-md-6 col-xl-4 mb-4";
       card.innerHTML = `
-        <div class="card h-100 product-card border-0 shadow-lg" style="border-radius:1.5rem;overflow:hidden;transition:box-shadow .2s;">
-          <div class="position-relative bg-gradient" style="background:linear-gradient(135deg,#f8fafc 60%,#e0e7ff 100%);">
-            <img src="${p.image}" class="card-img-top" alt="${p.name}" style="height:220px;object-fit:cover;border-radius:1.5rem 1.5rem 0 0;">
+        <div class="card h-100 product-card border-0 shadow-lg" style="border-radius:1.5rem;overflow:hidden;transition:box-shadow .2s;background:rgba(255,255,255,0.18);backdrop-filter:blur(12px) saturate(180%);box-shadow:0 8px 32px 0 rgba(31,38,135,0.18);border:1px solid rgba(255,255,255,0.24);">
+          <div class="position-relative bg-gradient" style="background:linear-gradient(135deg,rgba(248,250,252,0.7) 60%,rgba(224,231,255,0.7) 100%);">
+            <img src="${p.image}" class="card-img-top" alt="${p.name}" style="height:220px;object-fit:cover;border-radius:1.5rem 1.5rem 0 0;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
             <span class="position-absolute top-0 start-0 m-2 badge rounded-pill bg-warning text-dark shadow">${p.size}</span>
             <span class="position-absolute top-0 end-0 m-2 badge rounded-pill bg-info text-dark shadow">${p.category || ''}</span>
             <span class="position-absolute bottom-0 start-0 m-2 badge rounded-pill bg-success text-white shadow"><i class="fa fa-star"></i> ${rating}</span>
-            <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-2 rounded-circle product-details-btn shadow" style="z-index:2;" title="View Details" data-id="${p.id}"><i class="fa fa-eye"></i></button>
+            <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-2 rounded-circle product-details-btn shadow" style="z-index:2;backdrop-filter:blur(4px);background:rgba(255,255,255,0.7);" title="View Details" data-id="${p.id}"><i class="fa fa-eye"></i></button>
           </div>
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title fw-bold mb-1 text-truncate" title="${p.name}">${p.name}</h6>
+          <div class="card-body d-flex flex-column" style="background:rgba(255,255,255,0.22);backdrop-filter:blur(8px);border-radius:0 0 1.5rem 1.5rem;">
+            <h6 class="card-title fw-bold mb-1 text-truncate" title="${p.name}" style="color:#222;text-shadow:0 1px 4px rgba(0,0,0,0.08);">${p.name}</h6>
             <div class="mb-2 d-flex flex-wrap gap-1">
               <span class="badge bg-primary">${p.brand}</span>
               <span class="badge bg-secondary">${p.manufacturer}</span>
@@ -277,8 +277,8 @@ function renderProducts(page = 1) {
             <div class="mb-2 text-muted small">${p.attributes}</div>
             <div class="mb-2 fw-bold fs-5 text-success">$${p.price}</div>
             <div class="d-flex gap-2 mt-auto">
-              <button class="btn btn-sm btn-success add-to-cart-btn px-3" data-id="${p.id}"><i class="fa fa-cart-plus me-1"></i>Add to Cart</button>
-              <button class="btn btn-sm btn-outline-danger px-3"><i class="fa fa-heart me-1"></i>Wishlist</button>
+              <button class="btn btn-sm btn-success add-to-cart-btn px-3" data-id="${p.id}" style="box-shadow:0 2px 8px rgba(0,128,0,0.08);"><i class="fa fa-cart-plus me-1"></i>Add to Cart</button>
+              <button class="btn btn-sm btn-outline-danger px-3" style="box-shadow:0 2px 8px rgba(255,0,0,0.08);"><i class="fa fa-heart me-1"></i>Wishlist</button>
             </div>
           </div>
         </div>
@@ -322,6 +322,8 @@ function showProductDetails(id) {
   const p = products.find(x => x.id === id);
   if (!p) return;
   let modal = document.getElementById('productDetailsModal');
+  // Support multiple images for slider, fallback to single image
+  let images = Array.isArray(p.images) ? p.images : [p.image];
   if (!modal) {
     modal = document.createElement('div');
     modal.id = 'productDetailsModal';
@@ -329,28 +331,53 @@ function showProductDetails(id) {
     modal.tabIndex = -1;
     modal.innerHTML = `
       <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Product Details</h5>
+        <div class="modal-content" style=";border-radius:1.5rem;overflow:hidden;">
+          <div class="modal-header" style="background:rgba(255,255,255,0.22);backdrop-filter:blur(8px);border-radius:1.5rem 1.5rem 0 0;">
+            <h5 class="modal-title" style="color:#222;text-shadow:0 1px 4px rgba(0,0,0,0.08);">${p.name}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="row g-4">
               <div class="col-md-5">
-                <img src="${p.image}" class="img-fluid rounded" alt="${p.name}">
+                <div id="productImageCarousel" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    ${images.map((img, idx) => `
+                      <div class="carousel-item${idx === 0 ? ' active' : ''}">
+                        <img src="${img}" class="d-block w-100 rounded" alt="${p.name}" style="box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+                      </div>
+                    `).join('')}
+                  </div>
+                  ${images.length > 1 ? `
+                    <button class="carousel-control-prev" type="button" data-bs-target="#productImageCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#productImageCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  ` : ''}
+                </div>
               </div>
               <div class="col-md-7">
-                <h4 class="fw-bold mb-2">${p.name}</h4>
+                <h4 class="fw-bold mb-2" style="color:#222;text-shadow:0 1px 4px rgba(0,0,0,0.08);">${p.name}</h4>
                 <div class="mb-2">
                   <span class="badge bg-primary">${p.brand}</span>
                   <span class="badge bg-secondary">${p.manufacturer}</span>
                   <span class="badge bg-info text-dark">${p.color}</span>
+                  <span class="badge bg-warning text-dark">${p.size}</span>
+                  <span class="badge bg-success text-white"><i class="fa fa-star"></i> ${p.rating || ''}</span>
                 </div>
-                <div class="mb-2 text-muted">${p.attributes}</div>
+                <div class="mb-2"><b>Category:</b> ${p.category || ''}</div>
+                <div class="mb-2"><b>Attributes:</b> <span class="text-muted">${p.attributes}</span></div>
+                <div class="mb-2"><b>Manufacturer:</b> ${p.manufacturer}</div>
+                <div class="mb-2"><b>Brand:</b> ${p.brand}</div>
+                <div class="mb-2"><b>Color:</b> ${p.color}</div>
+                <div class="mb-2"><b>Size:</b> ${p.size}</div>
                 <div class="mb-2 fw-bold fs-4 text-success">$${p.price}</div>
                 <div class="d-flex gap-2 mt-3">
-                  <button class="btn btn-success add-to-cart-btn-modal" data-id="${p.id}"><i class="fa fa-cart-plus me-1"></i>Add to Cart</button>
-                  <button class="btn btn-outline-secondary"><i class="fa fa-heart me-1"></i>Wishlist</button>
+                  <button class="btn btn-success add-to-cart-btn-modal" data-id="${p.id}" style="box-shadow:0 2px 8px rgba(0,128,0,0.08);"><i class="fa fa-cart-plus me-1"></i>Add to Cart</button>
+                  <button class="btn btn-outline-secondary" style="box-shadow:0 2px 8px rgba(0,0,0,0.08);"><i class="fa fa-heart me-1"></i>Wishlist</button>
                 </div>
               </div>
             </div>
@@ -360,15 +387,61 @@ function showProductDetails(id) {
     `;
     document.body.appendChild(modal);
   } else {
-    modal.querySelector('.modal-body .img-fluid').src = p.image;
+    // Update modal content for repeated opens (replace modal-body for reliability)
     modal.querySelector('.modal-title').textContent = p.name;
-    modal.querySelector('.modal-body h4').textContent = p.name;
-    modal.querySelector('.modal-body .badge.bg-primary').textContent = p.brand;
-    modal.querySelector('.modal-body .badge.bg-secondary').textContent = p.manufacturer;
-    modal.querySelector('.modal-body .badge.bg-info').textContent = p.color;
-    modal.querySelector('.modal-body .text-muted').textContent = p.attributes;
-    modal.querySelector('.modal-body .fw-bold.fs-4').textContent = `$${p.price}`;
-    modal.querySelector('.add-to-cart-btn-modal').setAttribute('data-id', p.id);
+    // Update carousel images and details
+    const modalBody = modal.querySelector('.modal-body');
+    if (modalBody) {
+      modalBody.innerHTML = `
+        <div class="row g-4">
+          <div class="col-md-5">
+            <div id="productImageCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                ${images.map((img, idx) => `
+                  <div class="carousel-item${idx === 0 ? ' active' : ''}">
+                    <img src="${img}" class="d-block w-100 rounded" alt="${p.name}" style="box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+                  </div>
+                `).join('')}
+              </div>
+              ${images.length > 1 ? `
+                <button class="carousel-control-prev" type="button" data-bs-target="#productImageCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productImageCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              ` : ''}
+            </div>
+          </div>
+          <div class="col-md-7">
+            <h4 class="fw-bold mb-2" style="color:#222;text-shadow:0 1px 4px rgba(0,0,0,0.08);">${p.name}</h4>
+            <div class="mb-2">
+              <span class="badge bg-primary">${p.brand}</span>
+              <span class="badge bg-secondary">${p.manufacturer}</span>
+              <span class="badge bg-info text-dark">${p.color}</span>
+              <span class="badge bg-warning text-dark">${p.size}</span>
+              <span class="badge bg-success text-white"><i class="fa fa-star"></i> ${p.rating || ''}</span>
+            </div>
+            <div class="mb-2"><b>Category:</b> ${p.category || ''}</div>
+            <div class="mb-2"><b>Attributes:</b> <span class="text-muted">${p.attributes}</span></div>
+            <div class="mb-2"><b>Manufacturer:</b> ${p.manufacturer}</div>
+            <div class="mb-2"><b>Brand:</b> ${p.brand}</div>
+            <div class="mb-2"><b>Color:</b> ${p.color}</div>
+            <div class="mb-2"><b>Size:</b> ${p.size}</div>
+            <div class="mb-2 fw-bold fs-4 text-success">$${p.price}</div>
+            <div class="d-flex gap-2 mt-3">
+              <button class="btn btn-success add-to-cart-btn-modal" data-id="${p.id}" style="box-shadow:0 2px 8px rgba(0,128,0,0.08);"><i class="fa fa-cart-plus me-1"></i>Add to Cart</button>
+              <button class="btn btn-outline-secondary" style="box-shadow:0 2px 8px rgba(0,0,0,0.08);"><i class="fa fa-heart me-1"></i>Wishlist</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    // Update add-to-cart button
+    const addBtn = modal.querySelector('.add-to-cart-btn-modal');
+    if (addBtn) addBtn.setAttribute('data-id', p.id);
   }
   // Attach add-to-cart event in modal
   setTimeout(() => {
@@ -474,12 +547,21 @@ function renderFilterUI() {
   const priceMax = Math.max(...products.map(p=>p.price));
   let filterSidebar = document.getElementById("productFilters");
   if (filterSidebar) {
+    // Glass effect for sidebar
+    filterSidebar.style.background = "rgba(255,255,255,0.18)";
+    filterSidebar.style.backdropFilter = "blur(14px) saturate(180%)";
+    filterSidebar.style.borderRadius = "1.5rem";
+    filterSidebar.style.boxShadow = "0 8px 32px 0 rgba(31,38,135,0.18)";
+    filterSidebar.style.border = "1px solid rgba(255,255,255,0.24)";
     // Clear sidebar for full re-render
     filterSidebar.innerHTML = '';
     // Price Range Slider
     const priceRangeContainer = document.createElement("div");
     priceRangeContainer.id = "priceRangeContainer";
     priceRangeContainer.className = "mb-4 p-3 bg-light rounded shadow-sm border";
+    priceRangeContainer.style.background = "rgba(255,255,255,0.22)";
+    priceRangeContainer.style.backdropFilter = "blur(8px)";
+    priceRangeContainer.style.borderRadius = "1rem";
     priceRangeContainer.innerHTML = `
       <label class="form-label fw-semibold mb-2">Price Range</label>
       <div class="d-flex align-items-center gap-2">
@@ -659,4 +741,154 @@ document.getElementById("sortSelect").onchange = function() {
 
 
 // Initial render
+
+// --- Cart State and UI ---
+let cart = [];
+
+function updateCartCounter() {
+  let cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  let cartCounter = document.getElementById('cartCounter');
+  if (!cartCounter) {
+    // Add cart icon and counter to navbar if not present
+    let nav = document.querySelector('.navbar, .topbar, header');
+    if (nav) {
+      let cartBtn = document.createElement('div');
+      cartBtn.className = 'position-relative ms-3';
+      cartBtn.innerHTML = `
+        <a href="#" id="cartIconBtn" class="btn btn-light rounded-circle shadow-sm" style="font-size:1.5rem;">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cartCounter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </a>
+      `;
+      nav.appendChild(cartBtn);
+    }
+    cartCounter = document.getElementById('cartCounter');
+  }
+  if (cartCounter) cartCounter.textContent = cartCount;
+}
+
+function showCartFlyout() {
+  let flyout = document.getElementById('cartFlyout');
+  if (!flyout) {
+    flyout = document.createElement('div');
+    flyout.id = 'cartFlyout';
+    flyout.className = 'card shadow-lg position-fixed top-0 end-0 m-3';
+    flyout.style.zIndex = 9999;
+    flyout.style.width = '350px';
+    flyout.style.maxHeight = '80vh';
+    flyout.style.overflowY = 'auto';
+    document.body.appendChild(flyout);
+  }
+  // Always show flyout, hide others
+  document.querySelectorAll('.card#cartFlyout').forEach(f => { if (f !== flyout) f.remove(); });
+  // Render cart items
+  let itemsHtml = '';
+  if (cart.length === 0) {
+    itemsHtml = '<div class="p-4 text-center text-muted">Your cart is empty.</div>';
+  } else {
+    itemsHtml = cart.map(item => {
+      const p = products.find(x => x.id === item.id);
+      return `<div class="d-flex align-items-center p-2 border-bottom">
+        <img src="${p.image}" alt="${p.name}" style="width:48px;height:48px;object-fit:cover;border-radius:8px;">
+        <div class="ms-2 flex-grow-1">
+          <div class="fw-bold">${p.name}</div>
+          <div class="small text-muted">${item.qty} x $${p.price}</div>
+        </div>
+        <button class="btn btn-sm btn-outline-danger remove-cart-item" data-id="${item.id}"><i class="fa fa-trash"></i></button>
+      </div>`;
+    }).join('');
+    itemsHtml += `<div class="p-3 fw-bold text-end">Total: $${cart.reduce((sum, item) => {
+      const p = products.find(x => x.id === item.id);
+      return sum + (p.price * item.qty);
+    }, 0)}</div>`;
+  }
+  // Always show link to cart details page
+  itemsHtml += `<div class="p-3 text-center"><a href="cart.html" class="btn btn-primary w-100">Go to Cart Page</a></div>`;
+  flyout.innerHTML = `<div class="card-header bg-light fw-bold">Your Cart <button type="button" class="btn-close float-end" id="closeCartFlyout"></button></div>${itemsHtml}`;
+  flyout.style.display = 'block';
+  // Remove item event
+  flyout.querySelectorAll('.remove-cart-item').forEach(btn => {
+    btn.onclick = function() {
+      const id = parseInt(this.getAttribute('data-id'));
+      cart = cart.filter(item => item.id !== id);
+      updateCartCounter();
+      showCartFlyout();
+    };
+  });
+  // Close event (use event delegation for reliability)
+  setTimeout(() => {
+    const closeBtn = flyout.querySelector('#closeCartFlyout');
+    if (closeBtn) {
+      closeBtn.onclick = function(e) {
+        e.stopPropagation();
+        flyout.style.display = 'none';
+      };
+    }
+  }, 10);
+  // Keep flyout open on hover
+  flyout.onmouseenter = function() { flyout.style.display = 'block'; };
+  flyout.onmouseleave = function() { flyout.style.display = 'none'; };
+}
+
+function hideCartFlyout() {
+  let flyout = document.getElementById('cartFlyout');
+  if (flyout) flyout.style.display = 'none';
+}
+
+// Cart icon hover/click events
+document.addEventListener('DOMContentLoaded', function() {
+  updateCartCounter();
+  setTimeout(() => {
+    let cartIconBtn = document.getElementById('cartIconBtn');
+    if (cartIconBtn) {
+      cartIconBtn.onmouseenter = function() {
+        showCartFlyout();
+        let flyout = document.getElementById('cartFlyout');
+        if (flyout) flyout.style.display = 'block';
+      };
+      cartIconBtn.onclick = function(e) {
+        e.preventDefault();
+        showCartFlyout();
+        let flyout = document.getElementById('cartFlyout');
+        if (flyout) flyout.style.display = 'block';
+      };
+      cartIconBtn.onmouseleave = function() {
+        setTimeout(() => {
+          let flyout = document.getElementById('cartFlyout');
+          if (flyout && !flyout.matches(':hover')) flyout.style.display = 'none';
+        }, 300);
+      };
+    }
+  }, 500);
+});
+
+// --- Add to Cart logic override ---
+function addToCart(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  let cartItem = cart.find(item => item.id === id);
+  if (cartItem) {
+    cartItem.qty += 1;
+  } else {
+    cart.push({ id: id, qty: 1 });
+  }
+  updateCartCounter();
+  // Demo: show toast or alert
+  if (!window.cartToast) {
+    const toast = document.createElement('div');
+    toast.className = 'toast align-items-center text-bg-success border-0 position-fixed bottom-0 end-0 m-4';
+    toast.id = 'cartToast';
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'assertive');
+    toast.setAttribute('aria-atomic', 'true');
+    toast.innerHTML = `<div class="d-flex"><div class="toast-body">Added <b>${p.name}</b> to cart!</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>`;
+    document.body.appendChild(toast);
+    window.cartToast = new bootstrap.Toast(toast, { delay: 2000 });
+  } else {
+    window.cartToast._element.querySelector('.toast-body').innerHTML = `Added <b>${p.name}</b> to cart!`;
+  }
+  window.cartToast.show();
+  renderPagination();
+}
+
 renderProducts(currentPage);

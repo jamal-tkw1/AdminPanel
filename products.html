@@ -334,117 +334,126 @@
                         <div class="row">
                             <!-- Filter Sidebar -->
                             <div class="col-lg-3 mb-4">
-                                <div class="card p-3 mb-4 shadow-sm">
-                                    <h6 class="fw-bold mb-3"><i class="fa fa-filter me-2 text-primary"></i>Advanced Filters</h6>
-<form id="productFilters">
-  <!-- Fallback filter and search controls for accessibility and SEO -->
-  <div class="mb-3">
-    <label class="form-label">Search</label>
-    <input type="search" class="form-control" placeholder="Search products..." id="searchInput">
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Category</label>
-    <select class="form-select" id="categorySelect">
-      <option value="">All Categories</option>
-      <option value="phone">Phone</option>
-      <option value="laptop">Laptop</option>
-      <option value="headphones">Headphones</option>
-      <option value="camera">Camera</option>
-      <option value="tablet">Tablet</option>
-      <option value="speaker">Speaker</option>
-      <option value="console">Console</option>
-      <option value="watch">Watch</option>
-      <option value="monitor">Monitor</option>
-      <option value="printer">Printer</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Minimum Rating</label>
-    <select class="form-select" id="ratingSelect">
-      <option value="">Any Rating</option>
-      <option value="1">1+</option>
-      <option value="2">2+</option>
-      <option value="3">3+</option>
-      <option value="4">4+</option>
-      <option value="5">5</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Attributes</label>
-    <input type="text" class="form-control" placeholder="e.g. 16GB RAM, 5G" id="attributesInput">
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Price Range</label>
-    <div class="d-flex align-items-center gap-2">
-      <input type="number" class="form-control" placeholder="Min" min="0" id="priceMin" style="width: 40%;">
-      <span class="mx-1">-</span>
-      <input type="number" class="form-control" placeholder="Max" min="0" id="priceMax" style="width: 40%;">
-    </div>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Brand</label>
-    <select class="form-select" id="brandSelect" multiple>
-      <option>Apple</option>
-      <option>Samsung</option>
-      <option>Sony</option>
-      <option>Dell</option>
-      <option>HP</option>
-      <option>Lenovo</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Manufacturer</label>
-    <select class="form-select" id="manufacturerSelect" multiple>
-      <option>Foxconn</option>
-      <option>Compal</option>
-      <option>Quanta</option>
-      <option>Wistron</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Color</label>
-    <div class="d-flex flex-wrap gap-2">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Black" id="colorBlack">
-        <label class="form-check-label" for="colorBlack">Black</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="White" id="colorWhite">
-        <label class="form-check-label" for="colorWhite">White</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Silver" id="colorSilver">
-        <label class="form-check-label" for="colorSilver">Silver</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Blue" id="colorBlue">
-        <label class="form-check-label" for="colorBlue">Blue</label>
-      </div>
-    </div>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Size</label>
-    <div class="d-flex flex-wrap gap-2">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Small" id="sizeSmall">
-        <label class="form-check-label" for="sizeSmall">Small</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Medium" id="sizeMedium">
-        <label class="form-check-label" for="sizeMedium">Medium</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="Large" id="sizeLarge">
-        <label class="form-check-label" for="sizeLarge">Large</label>
-      </div>
-    </div>
-  </div>
-  <div class="d-grid gap-2 mt-3">
-    <button type="submit" class="btn btn-primary"><i class="fa fa-search me-1"></i>Apply Filters</button>
-    <button type="reset" class="btn btn-outline-secondary">Clear</button>
-  </div>
-</form>
+                                <div id="productFilters" class="glass-sidebar p-4 mb-4">
+                                    <h6 class="fw-bold mb-4" style="font-size:1.1rem;"><i class="fa fa-filter me-2 text-primary"></i>Advanced Filters</h6>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label">Search</label>
+                                            <input type="search" class="form-control" placeholder="Search products..." id="searchInput">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Category</label>
+                                            <select class="form-select" id="categorySelect">
+                                                <option value="">All Categories</option>
+                                                <option value="phone">Phone</option>
+                                                <option value="laptop">Laptop</option>
+                                                <option value="headphones">Headphones</option>
+                                                <option value="camera">Camera</option>
+                                                <option value="tablet">Tablet</option>
+                                                <option value="speaker">Speaker</option>
+                                                <option value="console">Console</option>
+                                                <option value="watch">Watch</option>
+                                                <option value="monitor">Monitor</option>
+                                                <option value="printer">Printer</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Minimum Rating</label>
+                                            <select class="form-select" id="ratingSelect">
+                                                <option value="">Any Rating</option>
+                                                <option value="1">1+</option>
+                                                <option value="2">2+</option>
+                                                <option value="3">3+</option>
+                                                <option value="4">4+</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Attributes</label>
+                                            <input type="text" class="form-control" placeholder="e.g. 16GB RAM, 5G" id="attributesInput">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Price Range</label>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <input type="number" class="form-control" placeholder="Min" min="0" id="priceMin" style="width: 40%;">
+                                                <span class="mx-1">-</span>
+                                                <input type="number" class="form-control" placeholder="Max" min="0" id="priceMax" style="width: 40%;">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Brand</label>
+                                            <select class="form-select" id="brandSelect" multiple>
+                                                <option>Apple</option>
+                                                <option>Samsung</option>
+                                                <option>Sony</option>
+                                                <option>Dell</option>
+                                                <option>HP</option>
+                                                <option>Lenovo</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Manufacturer</label>
+                                            <select class="form-select" id="manufacturerSelect" multiple>
+                                                <option>Foxconn</option>
+                                                <option>Compal</option>
+                                                <option>Quanta</option>
+                                                <option>Wistron</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Color</label>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="Black" id="colorBlack">
+                                                    <label class="form-check-label" for="colorBlack">Black</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="White" id="colorWhite">
+                                                    <label class="form-check-label" for="colorWhite">White</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="Silver" id="colorSilver">
+                                                    <label class="form-check-label" for="colorSilver">Silver</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="Blue" id="colorBlue">
+                                                    <label class="form-check-label" for="colorBlue">Blue</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Size</label>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="Small" id="sizeSmall">
+                                                    <label class="form-check-label" for="sizeSmall">Small</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="Medium" id="sizeMedium">
+                                                    <label class="form-check-label" for="sizeMedium">Medium</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="Large" id="sizeLarge">
+                                                    <label class="form-check-label" for="sizeLarge">Large</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-grid gap-2 mt-3">
+                                            <button type="submit" class="btn btn-primary"><i class="fa fa-search me-1"></i>Apply Filters</button>
+                                            <button type="reset" class="btn btn-outline-secondary">Clear</button>
+                                        </div>
+                                    </form>
                                 </div>
+    <style>
+    /* Glass effect for filter sidebar only */
+    .glass-sidebar {
+        background: rgba(255,255,255,0.18);
+        backdrop-filter: blur(14px) saturate(180%);
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+        border: 1px solid rgba(255,255,255,0.24);
+    }
+    </style>
                             </div>
                             <!-- Product Grid -->
                             <div class="col-lg-9">
